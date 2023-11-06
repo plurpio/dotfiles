@@ -39,7 +39,6 @@ require("lazy").setup({
   "vim-airline/vim-airline-themes",
   "scrooloose/nerdtree",
   "ryanoasis/vim-devicons",
-  "mfussenegger/nvim-dap",
   "lewis6991/gitsigns.nvim",
   { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" }},
 })
