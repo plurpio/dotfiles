@@ -1,0 +1,25 @@
+# Desktop
+hyprland
+wezterm
+wofi
+ly
+
+# Prompt
+zsh
+zsh-syntax-highlighting
+zsh-autosuggestions
+
+# CLI
+neofetch
+neovim
+tmux
+btop
+cmatrix
+bat
+
+# Development
+python-pipx
+
+# System
+flatpak
+doas
