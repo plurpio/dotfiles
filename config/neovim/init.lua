@@ -38,10 +38,15 @@ require("lazy").setup({
   "vim-airline/vim-airline",
   "vim-airline/vim-airline-themes",
   "scrooloose/nerdtree",
+  "theprimeagen/harpoon",
   "ryanoasis/vim-devicons",
   "lewis6991/gitsigns.nvim",
   { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" }},
 })
+
+-- Plugin Configuration
+require('gitsigns').setup()
+
 
 -- CONFIGURATION
 
@@ -53,9 +58,13 @@ vim.cmd "map <C-s> :w <Enter>" -- Save file
 vim.cmd "map <C-q> :wq <Enter>" -- Save and quit file
 
 -- Telescope
-vim.cmd "map <C-e> :Telescope find_files <Enter>" -- Search files in dir
 vim.cmd "map <C-f> :Telescope live_grep <Enter>" -- Search in file
 vim.cmd "map <C-T> :Telescope colorscheme <Enter>" -- Change colorscheme
 
+-- Harpoon
+vim.cmd "map <C-y> :lua require('harpoon.mark').add_file() <Enter>" -- Add file to harpoon
+vim.cmd "map <C-t> :lua require('harpoon.mark').rm_file() <Enter>" -- Add remove to harpoon
+vim.cmd "map <C-e> :lua require('harpoon.ui').toggle_quick_menu() <Enter>" -- Open harpoon menu
+
 -- NERDTree BINDS
-vim.cmd "map <C-d> :NERDTreeToggle <Enter>"
+vim.cmd "map <C-d> :NERDTreeToggle <Enter>" -- Open a directory tree
