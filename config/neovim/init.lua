@@ -46,6 +46,7 @@ require("lazy").setup({
 
 -- Plugin Configuration
 require('gitsigns').setup()
+require("telescope").load_extension('harpoon')
 
 
 -- CONFIGURATION
@@ -64,7 +65,7 @@ vim.cmd "map <C-T> :Telescope colorscheme <Enter>" -- Change colorscheme
 -- Harpoon
 vim.cmd "map <C-y> :lua require('harpoon.mark').add_file() <Enter>" -- Add file to harpoon
 vim.cmd "map <C-t> :lua require('harpoon.mark').rm_file() <Enter>" -- Add remove to harpoon
-vim.cmd "map <C-e> :lua require('harpoon.ui').toggle_quick_menu() <Enter>" -- Open harpoon menu
+vim.cmd "map <C-e> :Telescope harpoon marks <Enter>"
 
 -- NERDTree BINDS
 vim.cmd "map <C-d> :NERDTreeToggle <Enter>" -- Open a directory tree
