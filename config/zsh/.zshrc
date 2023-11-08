@@ -27,20 +27,29 @@ PROMPT="%~ %{$fg[cyan]%}$ "
 RPROMPT="%{$fg[red]%}%n@%m"
 
 # Alias
+
+# Get contents of directory/files
 alias ls='ls -ah --color=auto'
 alias ll='ls -lah --color=auto'
+alias cat='bat'
 
+# Change directory alias
 alias ..='cd ..'
 alias cd..='cd ..'
 alias ~='cd ~'
 
+# Remove/quit alias
 alias rm='rm -rf'
 alias cls='clear'
 alias quit='exit'
 
+# Neovim alias
 alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
+
+# Development tool alias
+alias py='python3'
 
 # Pywal
 (cat ~/.cache/wal/sequences &)
