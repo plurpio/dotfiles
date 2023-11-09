@@ -16,10 +16,12 @@ tmux
 btop
 cmatrix
 bat
+trash-cli
 
 # Development
 python-pipx
 
 # System
+gparted
 flatpak
 doas
