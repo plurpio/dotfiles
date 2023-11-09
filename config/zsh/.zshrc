@@ -26,6 +26,9 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 PROMPT="%~ %{$fg[cyan]%}$ "
 RPROMPT="%{$fg[red]%}%n@%m"
 
+# Set enviroment variables
+EDITOR=nvim
+
 # Alias
 
 # Get contents of directory/files
