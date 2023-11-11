@@ -69,7 +69,7 @@ for i in apps:
     cmd = "sudo pacman -S --needed --noconfirm "+installApp
     os.system(cmd)
 
-close("pkgList")
+apps.close()
 
 console.clear()
 menu(True, False)
@@ -97,7 +97,7 @@ for i in services:
     os.system(cmd)
     console.log("Successfully enabled service:", i)
 
-close("services")
+services.close()
 
 console.clear()
 menu(True, True)
