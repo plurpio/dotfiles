@@ -50,4 +50,5 @@ com.github.tchx84.Flatseal
 zsh
 zsh-syntax-highlighting
 zsh-autosuggestions
+polkit-kde-agent
 gparted
