@@ -12,7 +12,7 @@ $_ Shell - zsh <br />
 🌏 Browser - Firefox <br />
 
 ### Installation
-Execute the following commands to install my dotfiles on a **pre-installed** Arch installation. You will need to have **git** and **python3** (preinstalled) installed. <br />
+Execute the following commands to install my dotfiles on a **pre-installed** Arch installation. You will need to have **git** and **python3** installed. <br />
 
 **BEFORE INSTALLATION MAKE SURE TO UNCOMMENT `ParallelDownloads = 5` IN THE /ETC/PACMAN.CONF FILE FOR FASTER SPEEDS**
 `git clone https://github.com/plurpio/dotfiles && cd dotfiles/install/ && python3 install.py`
