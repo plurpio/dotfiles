@@ -13,6 +13,4 @@ $_ Shell - zsh <br />
 
 ### Installation
 Execute the following commands to install my dotfiles on a **pre-installed** Arch installation. You will need to have **git** and **python3** (preinstalled) installed. <br />
-`git clone https://github.com/plurpio/dotfiles \ <br />
-cd dotfiles/install/ \
-python3 install.py` <br />
+`git clone https://github.com/plurpio/dotfiles && cd dotfiles/install/ && python3 install.py`
