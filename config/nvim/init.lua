@@ -1,12 +1,19 @@
--- General
+-------------
+-- General --
+-------------
 
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.mouse = "a"
 vim.opt.cursorline = true
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.opt.termguicolors = true
 
--- Plugins
+---------------
+--- Plugins ---
+---------------
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -27,7 +34,7 @@ require("lazy").setup({
   "Mofiqul/vscode.nvim",
   "shaunsingh/nord.nvim",
 
--- LSP
+-- LSP & CODE EDITING
   {'williamboman/mason.nvim'},
   {'williamboman/mason-lspconfig.nvim'},
 
@@ -36,39 +43,77 @@ require("lazy").setup({
   {'hrsh7th/cmp-nvim-lsp'},
   {'hrsh7th/nvim-cmp'},
   {'L3MON4D3/LuaSnip'},
+  "mhartington/formatter.nvim",
 
-
+-- OTHER
   "vim-airline/vim-airline",
   "vim-airline/vim-airline-themes",
-  "scrooloose/nerdtree",
+  "nvim-tree/nvim-tree.lua",
   "theprimeagen/harpoon",
   "ryanoasis/vim-devicons",
   "lewis6991/gitsigns.nvim",
   { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" }},
 })
 
--- Plugin Configuration
+--------------------------
+-- Plugin Configuration --
+--------------------------
 require('gitsigns').setup()
 require("telescope").load_extension('harpoon')
+require("nvim-tree").setup()
 
+-- LSP & CODE EDITING
+-- LSP Packages: pyright, lua-language-server
+require("mason").setup()
+require("formatter").setup {}
 
--- CONFIGURATION
+local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
 
+local lsp_zero = require('lsp-zero')
+require('lspconfig').pyright.setup({})
+require'lspconfig'.lua_ls.setup{}
+
+-------------------
+-- CONFIGURATION --
+-------------------
 vim.cmd.colorscheme "catppuccin-macchiato"
 vim.cmd.AirlineTheme "catppuccin"
 
--- Keybinds
-vim.cmd "map <C-s> :w <Enter>" -- Save file
-vim.cmd "map <C-q> :wq <Enter>" -- Save and quit file
+--------------
+-- Keybinds --
+--------------
+vim.keymap.set("n", "<C-s>", "<cmd>w <CR>") -- Save file
+vim.keymap.set("n", "<C-q>", "<cmd>wq <CR>") -- Save and quit file
 
 -- Telescope
-vim.cmd "map <C-f> :Telescope live_grep <Enter>" -- Search in file
-vim.cmd "map <C-t> :Telescope colorscheme <Enter>" -- Change colorscheme
+vim.keymap.set("n", "<C-f>", "<cmd>Telescope live_grep <CR>") -- Search in file
+vim.keymap.set("n", "<C-t>", "<cmd>Telescope colorscheme <CR>") -- Change colorscheme
 
 -- Harpoon
 vim.cmd "map <C-y> :lua require('harpoon.mark').add_file() <Enter>" -- Add file to harpoon
 vim.cmd "map <C-g> :lua require('harpoon.mark').rm_file() <Enter>" -- Add remove to harpoon
-vim.cmd "map <C-e> :Telescope harpoon marks <Enter>"
+vim.keymap.set("n", "<C-e>", "<cmd>Telescope harpoon marks <CR>") -- Opens marked files changer thing
 
 -- NERDTree BINDS
-vim.cmd "map <C-d> :NERDTreeToggle <Enter>" -- Open a directory tree
+vim.keymap.set("n", "<C-d>", "<cmd>NvimTreeToggle<CR>") -- Opens dir tree
+
+
+-- CMP Binds
+cmp.setup({
+  mapping = cmp.mapping.preset.insert({
+    -- `Enter` key to confirm completion
+    ['<CR>'] = cmp.mapping.confirm({select = false}),
+
+    -- Ctrl+a to trigger completion menu
+    ['<C-a>'] = cmp.mapping.complete(),
+
+    -- Navigate between snippet placeholder
+    ['<C-v>'] = cmp_action.luasnip_jump_forward(),
+    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+
+    -- Scroll up and down in the completion documentation
+    ['<C-x>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-z>'] = cmp.mapping.scroll_docs(4),
+  })
+})
