@@ -108,8 +108,6 @@ def dotfileInstallation():
             os.system("ln -s ../config/zsh/.zshrc ~/.zshrc") # it works i guess
             console.log("Symlinked .zshrc to the home directory")
             continue
-        cmd = "mkdir $HOME/.config/"+i
-        os.system(cmd)
         cmd = "ln -s ../config/"+i+" ~/.config"
         os.system(cmd)
         console.log("Symlinked", i, "to the config directory.")
