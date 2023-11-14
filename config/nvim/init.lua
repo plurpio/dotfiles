@@ -33,6 +33,7 @@ require("lazy").setup({
   "catppuccin/nvim",
   "Mofiqul/vscode.nvim",
   "shaunsingh/nord.nvim",
+  "navarasu/onedark.nvim",
 
 -- LSP & CODE EDITING
   {'williamboman/mason.nvim'},
@@ -43,7 +44,6 @@ require("lazy").setup({
   {'hrsh7th/cmp-nvim-lsp'},
   {'hrsh7th/nvim-cmp'},
   {'L3MON4D3/LuaSnip'},
-  "mhartington/formatter.nvim",
 
 -- OTHER
   "vim-airline/vim-airline",
@@ -65,7 +65,6 @@ require("nvim-tree").setup()
 -- LSP & CODE EDITING
 -- LSP Packages: pyright, lua-language-server
 require("mason").setup()
-require("formatter").setup {}
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
