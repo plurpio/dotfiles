@@ -22,6 +22,7 @@ cmatrix
 bat
 lf
 wget
+unzip
 
 # Social
 de.shorsh.discord-screenaudio
