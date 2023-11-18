@@ -6,7 +6,7 @@ bindkey -e
 
 # Autocomplete
 autoload -U colors && colors
-zstyle :compinstall filename '/home/alex/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
 compinit
 
