@@ -27,15 +27,3 @@ require('dashboard').setup ({
     footer = {"  scaring the ever living shit out of vscode users"}
     },
   })
-
-vim.g.dashboard_custom_header =[[
-    \'          ▀████▀▄▄              ▄█ ',
-    \'            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ',
-    \'    ▄        █          ▀▀▀▀▄  ▄▀  ',
-    \'   ▄▀ ▀▄      ▀▄              ▀▄▀  ',
-    \'  ▄▀    █     █▀   ▄█▀▄      ▄█    ',
-    \'  ▀▄     ▀▄  █     ▀██▀     ██▄█   ',
-    \'   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ',
-    \'    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ',
-    \'   █   █  █      ▄▄           ▄▀   ',
-    \]]
