@@ -42,6 +42,11 @@ require("lazy").setup({
 ------------
 
   {
+      'nvimdev/dashboard-nvim',
+      dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
+  {
 	  "vim-airline/vim-airline"
   },
 
