@@ -4,6 +4,7 @@
 vim.keymap.set("n", "<C-s>", "<cmd>w <CR>") -- Save file
 vim.keymap.set("n", "<C-q>", "<cmd>wq <CR>") -- Save and quit file
 vim.keymap.set("n", "<S-x>", "<cmd>Dashboard <CR>") -- Access dashboard
+vim.cmd "map <C-q> :lua require('conform').format() <Enter>"
 
 -- Editor Movement
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
