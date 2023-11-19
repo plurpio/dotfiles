@@ -104,6 +104,11 @@ require("lazy").setup({
   },
 
   {
+    'stevearc/conform.nvim',
+    opts = {},
+  },
+
+  {
 	  'L3MON4D3/LuaSnip'
   },
 

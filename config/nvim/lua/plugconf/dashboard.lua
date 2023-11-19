@@ -1,5 +1,5 @@
 require('dashboard').setup ({
-     theme = 'hyper',
+    theme = 'hyper',
     config = {
       shortcut = {
         { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
