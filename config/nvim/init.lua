@@ -10,4 +10,4 @@ require("plugconf.general")
 require("plugconf.lsp")
 require("plugconf.cmp")
 require("plugconf.mason")
-
+require("plugconf.dashboard")
