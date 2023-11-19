@@ -135,3 +135,5 @@ else:
     pkgInstallation()
     dotfileInstallation()
     serviceEnable()
+    menu(True, True, True)
+    console.print("\n Installation complete.", style="bright_green", justify="center")
