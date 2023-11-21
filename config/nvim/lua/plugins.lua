@@ -34,10 +34,6 @@ require("lazy").setup({
   },
 
   {
-	  "navarasu/onedark.nvim"
-  },
-
-  {
     "ellisonleao/gruvbox.nvim"
   },
 
@@ -130,7 +126,16 @@ require("lazy").setup({
   },
 
   {
-	  "lewis6991/gitsigns.nvim"
+	  "lewis6991/gitsigns.nvim",
+  },
+
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    config = true
   }
 })
 
