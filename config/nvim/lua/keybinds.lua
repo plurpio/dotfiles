@@ -4,10 +4,13 @@
 
 vim.g.mapleader = ' '
 
-vim.keymap.set("n", "eg", "<cmd>Neogit <CR>") -- Save file
 vim.keymap.set("n", "ew", "<cmd>w <CR>") -- Save file
 vim.keymap.set("n", "eq", "<cmd>wq <CR>") -- Save and quit file
 vim.cmd "map ec :lua require('conform').format() <Enter>"
+
+-- Git
+vim.keymap.set("n", "eg", "<cmd>Neogit <CR>") -- Opens NeoGit
+vim.keymap.set("n", "ef", "<cmd>Telescope git_files <CR>") -- Searchs files in git repos
 
 -- Editor Movement
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
