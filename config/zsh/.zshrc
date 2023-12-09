@@ -8,6 +8,7 @@ bindkey -e
 autoload -U colors && colors
 zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
+zstyle ':completion:*' menu select
 compinit
 
 # Load plugins
@@ -20,11 +21,6 @@ PROMPT="%K{yellow} %k%K{yellow}%F{black}%~%f%k%K{yellow} %k%F{yellow}%f "
 
 # Set enviroment variables
 EDITOR=nvim
-
-# Alias
-
-# General alias
-alias sudo='doas'
 
 # Get contents of directory/files
 alias ls='ls -ah --color=auto'
@@ -50,6 +46,3 @@ alias v='nvim'
 alias py='python3'
 alias gitlc='git log --branches --not --remotes' # Shows commits that have not been pushed
 
-# Pywal
-(/bin/cat ~/.cache/wal/sequences &)
-source ~/.cache/wal/colors-tty.sh
