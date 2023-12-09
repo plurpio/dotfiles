@@ -51,11 +51,8 @@ require("lazy").setup({
   },
 
   {
-	  "vim-airline/vim-airline"
-  },
-
-  {
-	  "vim-airline/vim-airline-themes"
+  'nvim-lualine/lualine.nvim',
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   },
 
   {
