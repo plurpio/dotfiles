@@ -56,11 +56,8 @@ require("lazy").setup({
   },
 
   {
-	  "nvim-tree/nvim-tree.lua"
-  },
-
-  {
-	  "ryanoasis/vim-devicons"
+	  "nvim-tree/nvim-tree.lua",
+	  dependencies = { "ryanoasis/vim-devicons" }
   },
 
   {
