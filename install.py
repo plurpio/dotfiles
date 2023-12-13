@@ -3,22 +3,13 @@
 #
 
 import os
-from rich.console import Console
-from rich.theme import Theme
 
 #
 #  UI CODE
 # 
 
-ui = Theme({
-    "status": "green",
-    "name": "bold yellow",
-})
-
-console = Console(theme=ui)
-
 def menu(pkgsInstalled, aurInstalled, dotsInstalled):
-  console.print("""
+  print("""
    ▄▄▄▄▄▄▄ ▄▄▄     ▄▄   ▄▄ ▄▄▄▄▄▄   ▄▄▄▄▄▄▄ ▄▄▄ ▄▄▄▄▄▄▄ 
   █       █   █   █  █ █  █   ▄  █ █       █   █       █
   █    ▄  █   █   █  █ █  █  █ █ █ █    ▄  █   █   ▄   █
@@ -27,7 +18,7 @@ def menu(pkgsInstalled, aurInstalled, dotsInstalled):
   █   █   █       █       █   █  █ █   █   █   █       █
   █▄▄▄█   █▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄█  █▄█▄▄▄█   █▄▄▄█▄▄▄▄▄▄▄█
   --- Install Script ---
-  """, style="bold #9447ca", justify="center")
+  """)
 
   if pkgsInstalled == True: pkgsInstalledUI = "[X]"
   else: pkgsInstalledUI = "[ ]"
@@ -38,12 +29,11 @@ def menu(pkgsInstalled, aurInstalled, dotsInstalled):
   if aurInstalled == True: aurInstalledUI = "[X]"
   else: aurInstalledUI = "[ ]"
 
-  console.print("\n [status]", pkgsInstalledUI, "[name] Installed packages", style="Medium_Purple1",  justify="center")
-  console.print("\n [status]", aurInstalledUI, "[name] Installed AUR pkgs", style="Medium_Purple1",  justify="center")
-  console.print("\n [status]", dotsInstalledUI, "[name] Installed dotfiles", style="Medium_Purple1",  justify="center")
+  print("\n", pkgsInstalledUI, "Installed packages")
+  print("\n", aurInstalledUI, "Installed AUR pkgs")
+  print("\n", dotsInstalledUI, "Installed dotfiles")
 
 onlyDots = False
-console.clear()
 menu(False, False, False)
 command = input("Do you want to continue? [Y/N] Type 'dots' to only install dotfiles \n> ")
 if command.upper() == "DOTS": onlyDots = True
@@ -64,19 +54,18 @@ def pkgInstallation():
     elif "." in i:
       installApp = installApp = i.strip()
       if installApp == "": continue
-      console.log("Installing flatpak:", installApp)
+      print("Installing flatpak:", installApp)
       cmd = "sudo flatpak install -y "+installApp
       os.system(cmd)
     else:
       installApp = installApp = i.strip()
       if installApp == "": continue
-      console.log("Installing pacman app:", installApp)
+      print("Installing pacman app:", installApp)
       cmd = "sudo pacman -S --needed --noconfirm "+installApp
       os.system(cmd)
 
   apps.close()
 
-  console.clear()
   menu(True, False, False)
 
 #
@@ -90,12 +79,11 @@ def pkgInstallation():
   for i in aur:
       if "#" in i: continue
       else:
-          console.log("Installing package", i)
+          print("Installing package", i)
           cmd = "paru -S "+i
           os.system(cmd)
   aur.close()
 
-  console.clear()
   menu(True, True, False)
 
 #
@@ -107,11 +95,11 @@ def dotfileInstallation():
         if i == "zsh":
             cmd = "ln -sf "+os.getcwd()+"/config/zsh/.zshrc ~/.zshrc"
             os.system(cmd)
-            console.log("Symlinked .zshrc to the home directory")
+            print("Symlinked .zshrc to the home directory")
             continue
         cmd = "ln -sf "+os.getcwd()+"/config/"+i+" ~/.config/"
         os.system(cmd)
-        console.log("Symlinked", i, "to the config directory.")
+        print("Symlinked", i, "to the config directory.")
 
 #
 # Enabling services
@@ -122,18 +110,17 @@ def serviceEnable():
     for i in services:
         cmd = "sudo systemctl enable --now "+i
         os.system(cmd)
-        console.log("Successfully enabled service:", i)
+        print("Successfully enabled service:", i)
 
     services.close()
 
 if onlyDots == True:
     dotfileInstallation()
-    console.clear()
     menu(False, False, True)
-    console.print("\n Installation complete.", style="bright_green", justify="center")
+    print("\n Installation complete.")
 else:
     pkgInstallation()
     dotfileInstallation()
     serviceEnable()
     menu(True, True, True)
-    console.print("\n Installation complete.", style="bright_green", justify="center")
+    print("\n Installation complete.")
