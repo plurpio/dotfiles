@@ -4,6 +4,5 @@ x = 0
 width = 100%
 lines = 1
 
-show = drun
 single_click = True
 hide_search = True
