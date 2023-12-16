@@ -92,11 +92,12 @@ def pkgInstallation():
 
 def dotfileInstallation():
     for i in os.listdir("config/"):
-        if i == "zsh":
-            cmd = "ln -sf "+os.getcwd()+"/config/zsh/.zshrc ~/.zshrc"
-            os.system(cmd)
-            print("Symlinked .zshrc to the home directory")
-            continue
+        if i == "home":
+            for x in os.listdir("config/home"):
+                cmd = "ln -sf "+os.getcwd()+"/config/home/"+x+" ~/"+x
+                os.system(cmd)
+                print("Symlinked "+x+" to the home directory")
+                continue
         cmd = "ln -sf "+os.getcwd()+"/config/"+i+" ~/.config/"
         os.system(cmd)
         print("Symlinked", i, "to the config directory.")
