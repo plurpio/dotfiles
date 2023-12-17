@@ -63,3 +63,5 @@ polkit-kde-agent
 
 # Libs
 libnotify
+bluez
+bluez-utils
