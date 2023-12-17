@@ -26,8 +26,7 @@ vim.keymap.set("n", "<C-f>", "<cmd>Telescope live_grep <CR>") -- Search in file
 vim.keymap.set("n", "<C-t>", "<cmd>Telescope colorscheme <CR>") -- Change colorscheme
 
 -- NvimTree
-vim.keymap.set("n", "<C-d>", "<cmd>NvimTreeToggle<CR>") -- Opens dir tree
-vim.keymap.set("n", "<S-d>", "<cmd>NvimTreeFocus<CR>") -- Focuses dir tree
+vim.keymap.set("n", "ed", "<cmd>NvimTreeToggle <CR>") -- Opens dir tree
 
 -- Learning Binds
 vim.keymap.set("n", "<up>", "")
