@@ -1,12 +1,6 @@
-@define-color bg rgb(36, 39, 58);
-@define-color text rgb(202, 211, 245);
-@define-color blue rgb(138, 173, 244);
-@define-color green rgb(166, 218, 149);
-@define-color red rgb(237, 135, 150);
-@define-color purple rgb(198, 160, 246);
-@define-color yellow rgb(238, 212, 159);
-@define-color orange rgb(245, 169, 127);
-@define-color pink rgb(245, 189, 230);
+@import url('../../.cache/wal/colors-waybar.css');
+
+@define-color power rgb(237, 135, 150);
 
 
 * {
@@ -16,8 +10,8 @@
 }
 
 window#waybar {
-    background-color: @bg;
-    color: @text;
+    background-color: @background;
+    color: @color8;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -37,7 +31,7 @@ button:hover {
 
 #workspaces button {
     padding: 0 5px;
-    color: @purple;
+    color: @color7;
 }
 
 #workspaces button:hover {
@@ -59,12 +53,7 @@ button:hover {
 #memory,
 #pulseaudio,
 #wireplumber,
-#window,
 #tray,
-
-/*#custom-powermenu {
-  background-color: @red;
-}*/
 
 #workspaces {
     margin: 0 4px;
@@ -81,15 +70,15 @@ button:hover {
 }
 
 #clock {
-    color: @yellow;
+    color: @color14;
 }
 
 #battery {
-    color: @green;
+    color: @color13;
 }
 
 #battery.charging, #battery.plugged {
-    color: @green;
+    color: @color13;
 }
 
 @keyframes blink {
@@ -100,7 +89,6 @@ button:hover {
 }
 
 #battery.critical:not(.charging) {
-
     color: #ffffff;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -110,33 +98,28 @@ button:hover {
 }
 
 #cpu {
-    color: @blue;
+    color: @color11;
     padding-right: 5px;
 }
 
 #memory {
-    color: @orange;
+    color: @color12;
     padding-right: 5px;
 }
 
 #pulseaudio {
-    color: @pink;
-    padding-right: 5px;
-}
-
-#wireplumber {
-    color: #000000;
+    color: @color10;
     padding-right: 5px;
 }
 
 #custom-power {
-    color: @bg;
-    background-color: @red;
+    color: @background;
+    background-color: @color15;
     min-width: 45px;
 }
 
 #tray {
-  color: @red;
+  color: @color9;
   padding-right: 5px;
 }
 
