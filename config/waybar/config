@@ -6,9 +6,9 @@
     "spacing": 4, // Spacing inbetween each module
     
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "tray",],
-    "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "cpu", "memory", "battery", "clock", "custom/power"],
+    "modules-left": ["hyprland/workspaces", "custom/wallpaper", "tray"],
+    "modules-center": ["custom/media"],
+    "modules-right": ["pulseaudio", "cpu", "memory", "battery", "clock", "custom/update", "custom/power"],
     "tray": {
         // "icon-size": 21,
         "spacing": 10
@@ -57,6 +57,22 @@
         "format": "⏻",
         "escape": true,
         "on-click": "sh ~/.config/waybar/scripts/powermenu.sh"
-    }
+    },
+    "custom/media": {
+        "exec": "playerctl metadata title",
+        "escape": true,
+        "on-click": "sh ~/.config/waybar/scripts/powermenu.sh"
+    },
+    "custom/update": {
+        "exec": "sh ~/.config/waybar/scripts/updates.sh",
+        "escape": true,
+        "on-click": "kitty -e sh ~/.config/waybar/scripts/updatesys.sh"
+    },
+    "custom/wallpaper": {
+        "format": "",
+        "escape": true,
+        "on-click": "sh ~/.config/waybar/scripts/wallpapers.sh"
+   }
+   
 }
 
