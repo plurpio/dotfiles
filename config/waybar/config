@@ -1,9 +1,10 @@
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
+    "layer": "top",
+    "position": "top",
+    "height": 30, 
+    // "width": 1280,
+    "spacing": 4, // Spacing inbetween each module
+    
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "tray",],
     "modules-center": ["sway/window"],
@@ -19,10 +20,12 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "kitty -e btop"
     },
     "memory": {
-        "format": "{}% 󰧑"
+        "format": "{}% 󰧑",
+        "on-click": "kitty -e btop"
     },
     "battery": {
         "states": {
