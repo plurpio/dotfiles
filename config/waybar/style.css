@@ -35,7 +35,7 @@ button:hover {
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: @color6;
 }
 
 #workspaces button.focused {
@@ -71,14 +71,17 @@ button:hover {
 
 #clock {
     color: @color14;
+    padding-right: 5px;
 }
 
 #battery {
     color: @color13;
+    padding-right: 5px;
 }
 
 #battery.charging, #battery.plugged {
     color: @color13;
+    padding-right: 5px;
 }
 
 @keyframes blink {
@@ -95,15 +98,18 @@ button:hover {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    padding-right: 5px;
 }
 
 #cpu {
     color: @color11;
     padding-right: 5px;
+    padding-right: 5px;
 }
 
 #memory {
     color: @color12;
+    padding-right: 5px;
     padding-right: 5px;
 }
 
@@ -116,11 +122,18 @@ button:hover {
     color: @background;
     background-color: @color15;
     min-width: 45px;
+    padding-right: 5px;
+}
+
+#custom-update {
+    color: @background;
+    background-color: @color15;
+    min-width: 45px;
+    padding-right: 0px;
 }
 
 #tray {
   color: @color9;
-  padding-right: 5px;
 }
 
 #tray > .passive {
