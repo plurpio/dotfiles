@@ -41,6 +41,10 @@ require("lazy").setup({
     "folke/tokyonight.nvim"
   },
 
+  {
+    "dylanaraps/wal.vim"
+  },
+
 ------------
 -- EDITOR --
 ------------
