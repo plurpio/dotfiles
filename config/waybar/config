@@ -61,7 +61,8 @@
     "custom/media": {
         "exec": "playerctl metadata title",
         "escape": true,
-        "on-click": "sh ~/.config/waybar/scripts/powermenu.sh"
+        "on-click": "sh ~/.config/waybar/scripts/powermenu.sh",
+        "interval": 60
     },
     "custom/update": {
         "exec": "sh ~/.config/waybar/scripts/updates.sh",
