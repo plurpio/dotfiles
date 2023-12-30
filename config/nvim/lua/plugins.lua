@@ -70,6 +70,15 @@ require("lazy").setup({
   },
 
   {
+    "folke/zen-mode.nvim",
+    opts = {
+      width = 50,
+      height = 1,
+      backdrop = 0.7,
+      }
+  },
+
+  {
     "folke/which-key.nvim",
     event = "VeryLazy",
     init = function()
