@@ -30,6 +30,7 @@ wget
 unzip
 cpupower
 man-db
+ripgrep
 
 # Social
 dev.vencord.Vesktop
