@@ -6,7 +6,7 @@ shutdown="⏻ Shutdown"
 
 menu="$lock\n$restart\n$shutdown"
 
-selected="$(echo -e "$menu" | wofi -i -p "What do you want to do?" --matching=fuzzy --dmenu)"
+selected="$(echo -e "$menu" | tofi --prompt "What do you want to do?")"
 
 case $selected in
     $lock)      

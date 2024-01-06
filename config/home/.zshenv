@@ -1,5 +1,6 @@
 export PATH="$HOME/.local/bin:$PATH"
 export EDITOR="nvim"
+export TERMINAL="kitty"
 
 export XDG_DESKTOP_DIR="$HOME/docs"
 export XDG_DOCUMENTS_DIR="$HOME/docs"

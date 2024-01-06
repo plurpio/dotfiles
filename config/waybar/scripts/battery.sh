@@ -5,7 +5,7 @@ performance="    Performance"
 
 menu="$saving\n$performance"
 
-selected="$(echo -e "$menu" | wofi -i -p "CPU Power mode" --matching=fuzzy --dmenu)"
+selected="$(echo -e "$menu" | tofi --prompt "CPU Power mode")"
 
 case $selected in
     $saving)      
