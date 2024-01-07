@@ -145,6 +145,11 @@ require("lazy").setup({
       "nvim-telescope/telescope.nvim",
     },
     config = true
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
   }
 })
 
