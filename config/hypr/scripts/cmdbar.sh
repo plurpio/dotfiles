@@ -1,6 +1,6 @@
 #! /bin/bash
 
-SCRIPTDIR=$XDG_CONFIG_DIR/hypr/scripts
+SCRIPTDIR=~/.config/hypr/scripts
 
 option=$(echo -e "Wallpaper\n"\
 "Volume\n"\
