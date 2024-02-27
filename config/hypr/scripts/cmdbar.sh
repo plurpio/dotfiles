@@ -12,11 +12,9 @@ option=$(echo -e "Wallpaper\n"\
 "Logout\n"\
 "Theme" | tofi --prompt "What would you like to do?")
 
-echo "==="$option"===="
-
 case $option in
   Volume)
-    echo "some action"
+    sh $SCRIPTDIR/volume.sh
     ;;
   Wallpaper)
     sh $SCRIPTDIR/wallpaper.sh
@@ -31,7 +29,7 @@ case $option in
     sh $SCRIPTDIR/battery.sh
     ;;
   Update)
-    sh $SCRIPTDIR/update.sh
+    kitty -e sh $SCRIPTDIR/update.sh
     ;;
   Logout)
     pkill -u nico
