@@ -10,7 +10,7 @@ vim.cmd "map ec :lua require('conform').format() <Enter>"
 
 -- Git
 vim.keymap.set("n", "<leader>g", "<cmd>Neogit <CR>") -- Opens NeoGit
-vim.keymap.set("n", "<leader>f", "<cmd>Telescope git_files <CR>") -- Searchs files in git repos
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope git_files <CR>") -- Searchs files in git repos
 
 -- Editor Movement
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -22,7 +22,8 @@ vim.cmd "map er :lua require('harpoon.mark').rm_file() <Enter>" -- Add remove to
 vim.keymap.set("n", "<leader>x", "<cmd>Dashboard <CR>") -- Access dashboard
 vim.keymap.set("n", "<leader>e", "<cmd>Telescope harpoon marks <CR>") -- Opens marked files changer thing
 
-vim.keymap.set("n", "<leader>a", "<cmd>Telescope live_grep <CR>") -- Search in file
+vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep <CR>") -- Search in file
+vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers <CR>") -- Search from currently open buffers
 vim.keymap.set("n", "<leader>t", "<cmd>Telescope colorscheme <CR>") -- Change colorscheme
 
 -- NvimTree
