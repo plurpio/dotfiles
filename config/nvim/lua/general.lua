@@ -18,5 +18,4 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.cmd.colorscheme "catppuccin-macchiato"
-vim.cmd.AirlineTheme "catppuccin"
 vim.opt.termguicolors = true
