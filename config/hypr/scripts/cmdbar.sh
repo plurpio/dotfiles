@@ -10,7 +10,7 @@ option=$(echo -e "Wallpaper\n"\
 "Battery\n"\
 "Update\n"\
 "Logout\n"\
-"Games\n" \
+"Games\n"\
 "Theme" | tofi --prompt "What would you like to do?")
 
 case $option in
