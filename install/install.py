@@ -18,7 +18,7 @@ ui = Theme({
 
 console = Console(theme=ui)
 
-def menu(pkgsInstalled, dotsInstalled):
+def menu(pkgsInstalled, aurInstalled, dotsInstalled):
   console.print("""
    ▄▄▄▄▄▄▄ ▄▄▄     ▄▄   ▄▄ ▄▄▄▄▄▄   ▄▄▄▄▄▄▄ ▄▄▄ ▄▄▄▄▄▄▄ 
   █       █   █   █  █ █  █   ▄  █ █       █   █       █
@@ -36,14 +36,18 @@ def menu(pkgsInstalled, dotsInstalled):
   if dotsInstalled == True: dotsInstalledUI = "[X]"
   else: dotsInstalledUI = "[ ]"
 
+  if aurInstalled == True: aurInstalledUI = "[X]"
+  else: aurInstalledUI = "[ ]"
+
   console.print("\n [status]", pkgsInstalledUI, "[name] Installed packages", style="Medium_Purple1",  justify="center")
+  console.print("\n [status]", aurInstalledUI, "[name] Installed AUR pkgs", style="Medium_Purple1",  justify="center")
   console.print("\n [status]", dotsInstalledUI, "[name] Installed dotfiles", style="Medium_Purple1",  justify="center")
 
+
 console.clear()
-menu(False, False)
+menu(False, False, False)
 command = input("Do you want to continue? [Y/N] \n> ")
-if command.upper() != "Y":
-    exit()
+if command.upper() != "Y": exit()
 
 #
 # Installation of apps.
@@ -72,8 +76,26 @@ for i in apps:
 apps.close()
 
 console.clear()
-menu(True, False)
+menu(True, False, False)
 
+#
+# AUR
+#
+
+aur = open("aur")
+#os.system("mkdir $HOME/repos/")
+#os.system("cd ~/repos && git clone https://aur.archlinux.org/paru && cd paru && makepkg -si")
+
+for i in aur:
+    if "#" in i: continue
+    else:
+        console.log("Installing package", i)
+        cmd = "paru -S "+i
+        os.system(cmd)
+aur.close()
+
+console.clear()
+menu(True, True, False)
 #
 # Installation of dotfiles
 #
@@ -100,5 +122,5 @@ for i in services:
 services.close()
 
 console.clear()
-menu(True, True)
+menu(True, True, True)
 console.print("\n Installation complete.", style="bright_green", justify="center")
