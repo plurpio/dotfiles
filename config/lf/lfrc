@@ -41,8 +41,10 @@ cmd unarchive ${{
 }}
 
 cmd setwall ${{
+    killall waybar
     wal -i "$f"
-    swww img -t center "$f"
+    nohup waybar > /dev/null &
+    swww img -t random "$f"
 }}
 
 cmd nvim ${{
