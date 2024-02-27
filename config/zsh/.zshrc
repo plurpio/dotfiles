@@ -31,6 +31,9 @@ EDITOR=nvim
 
 # Alias
 
+# General alias
+alias sudo='doas'
+
 # Get contents of directory/files
 alias ls='ls -ah --color=auto'
 alias ll='ls -lah --color=auto'
