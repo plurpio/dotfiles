@@ -65,6 +65,7 @@
         "interval": 60
     },
     "custom/update": {
+        "format": " 󰏖 ",
         "exec": "sh ~/.config/waybar/scripts/updates.sh",
         "escape": true,
         "on-click": "kitty -e sh ~/.config/waybar/scripts/updatesys.sh",
@@ -73,7 +74,7 @@
     "custom/wallpaper": {
         "format": "",
         "escape": true,
-        "on-click": "a=~/media/backgrounds/$(ls ~/media/backgrounds | wofi -i --dmenu -p 'Background') && swww img $a && killall waybar && wal -i $a && nohup waybar > /dev/null &"
+        "on-click": "a=~/media/backgrounds/$(ls ~/media/backgrounds | wofi -i --dmenu -p 'Background') && swww img $a && killall waybar && wal -i $a && notify-send 'Wallpaper' 'Wallpaper and colourscheme changed' -i $a && nohup waybar > /dev/null &"
    }
    
 }
