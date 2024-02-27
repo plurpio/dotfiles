@@ -4,7 +4,7 @@ prisminstances=$(ls $HOME/.var/app/org.prismlauncher.PrismLauncher/data/PrismLau
  
 steamgames=$(for i in "$HOME/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps"/*.acf; do echo "$(grep -E '^\s+"name"' "$i" | sed -E 's/^\s+"name"\s+"(.*)".*/\1/') ($(grep -E '^\s+"appid"' "$i" | sed -E 's/^\s+"appid"\s+"([0-9]+)".*/\1/'))"; echo; done)
 
-games=$(echo -e "$steamgames\n$prisminstances")
+games=$(echo -e "$steamgames\n$prisminstances\nGenshin Impact")
 
 option=$(tofi --prompt "What game do you want to play?" <<< $games)
 
@@ -20,10 +20,21 @@ esac
 
 case $prisminstances in
   *"$option"*)
-      org.prismlauncher.PrismLauncher -l $option
+      org.prismlauncher.PrismLauncher -l "$option"
       exit
       ;;
   "")
       exit
       ;;
+esac
+
+
+case $option in
+  *"Genshin Impact"*)
+      an-anime-game-launcher --run-game
+      exit
+      ;;
+  *)
+    exit
+    ;;
 esac
