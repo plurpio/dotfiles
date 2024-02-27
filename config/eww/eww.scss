@@ -1,0 +1,34 @@
+@import "colors.scss";
+
+* {
+  all: unset; //Unsets everything so you can style everything from scratch
+}
+
+//Global Styles
+.bar {
+  background-color: $background;
+  color: $color12;
+  padding: 10px;
+}
+
+// Styles on classes (see eww.yuck for more information)
+
+.workspaces {
+  color: $color5;
+}
+
+.workspaces button {
+  padding-left: 6px
+}
+
+.workspaces button:hover {
+  color: $color10;
+}
+
+.music {
+  color: $color8;
+}
+
+.right {
+  color: $color14;
+}

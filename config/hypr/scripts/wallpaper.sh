@@ -14,9 +14,9 @@ sleep 0.1 # Hyprpaper gets stuck on this
 hyprctl hyprpaper wallpaper HDMI-A-1,~/.cache/wallpaper
 hyprctl hyprpaper wallpaper eDP-1,~/.cache/wallpaper
 
-killall waybar
+#killall waybar
 notify-send 'Wallpaper' 'Wallpaper and colourscheme changed' -i ~/.cache/wallpaper
-nohup waybar > /dev/null &
+#nohup waybar > /dev/null &
 ;;
 BatteryMode)
 selected="$(echo -e "    Saving\n    Performance" | tofi --prompt "CPU Power mode")"

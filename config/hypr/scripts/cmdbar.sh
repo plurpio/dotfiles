@@ -9,6 +9,7 @@ option=$(echo -e "Wallpaper\n"\
 "Lock\n"\
 "Battery\n"\
 "Update\n"\
+"Logout\n"\
 "Theme" | tofi --prompt "What would you like to do?")
 
 echo "==="$option"===="
@@ -31,6 +32,9 @@ case $option in
     ;;
   Update)
     sh $SCRIPTDIR/update.sh
+    ;;
+  Logout)
+    pkill -u nico
     ;;
   Lock)
     swaylock -f -e -S --grace 2 --fade-in 0.3 --effect-blur 25x25 --indicator --ring-color 9447ca --indicator-radius 100 --indicator-thickness 13 --effect-greyscale
