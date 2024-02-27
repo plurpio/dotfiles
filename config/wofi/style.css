@@ -1,0 +1,41 @@
+@define-color bg #24273a;
+@define-color accent #9447ca;
+@define-color text #cad3f5;
+
+#window {
+  background-color: @bg; 
+  color: @text; 
+}
+
+
+#outer-box {
+  background-color: @bg; 
+}
+
+
+#input {
+  background-color: @bg; 
+  color: @text;
+  border: 0;
+}
+
+
+#scroll {
+  background-color: @bg; 
+}
+
+
+#inner-box {
+  background-color: @bg; 
+}
+
+
+#entry:unselected {
+  color: @text; 
+}
+
+
+#entry:selected {
+  background-color: @accent; 
+}
+
