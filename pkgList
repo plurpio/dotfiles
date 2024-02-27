@@ -24,6 +24,7 @@ bat
 lf
 wget
 unzip
+cpupower
 
 # Social
 dev.vencord.Vesktop
