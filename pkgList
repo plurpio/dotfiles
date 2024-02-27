@@ -3,6 +3,7 @@ hyprland
 kitty
 wofi
 python-pywal
+mako
 ly
 
 # Essentials
@@ -25,19 +26,19 @@ wget
 unzip
 
 # Social
-de.shorsh.discord-screenaudio
+dev.vencord.Vesktop
 
 # Development
-io.github.shiftey.Desktop
-python-pipx
+git
+github-cli
 
 # Gaming
 com.valvesoftware.Steam
+net.davidotek.pupgui2
 org.prismlauncher.PrismLauncher
 net.brinkervii.grapejuice
 com.heroicgameslauncher.hgl
 io.itch.itch
-net.davidotek.pupgui2
 
 # Media
 com.obsproject.Studio
@@ -49,10 +50,8 @@ io.github.celluloid_player.Celluloid
 sh.cider.Cider
 
 # System
-doas
 com.github.tchx84.Flatseal
 zsh
 zsh-syntax-highlighting
 zsh-autosuggestions
 polkit-kde-agent
-gparted
