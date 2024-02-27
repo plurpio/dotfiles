@@ -129,7 +129,6 @@
 
 	# Spacing between results in pixels. Can be negative.
 	result-spacing = 20
-
 	# List results horizontally.
 	horizontal = true
 
@@ -141,7 +140,7 @@
 #
 	# Width and height of the window. Can be pixels or a percentage.
 	width = 100%
-	height = 40
+	height = 35
 
 	# Window background color
 
@@ -155,7 +154,7 @@
 	corner-radius = 0
 
 	# Padding between borders and text. Can be pixels or a percentage.
-	padding-top = 4
+	padding-top = 0
 	padding-bottom = 0
 	padding-left = 0
 	padding-right = 0

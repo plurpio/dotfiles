@@ -1,43 +1,17 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 30, 
+    "height": 35, 
     // "width": 1280,
     "spacing": 4, // Spacing inbetween each module
     
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "custom/wallpaper", "custom/vm", "tray"],
-    "modules-center": ["custom/media"],
-    "modules-right": ["pulseaudio", "cpu", "memory", "battery", "clock", "custom/update", "custom/power"],
+    "modules-left": ["custom/cmd", "hyprland/workspaces", "tray"],
+    //"modules-center": ["custom/media"],
+    "modules-right": ["pulseaudio", "custom/statusicons"],
     "tray": {
         // "icon-size": 21,
         "spacing": 10
-    },
-    "clock": {
-        "format": "{:%I:%M} 󰥔",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-    },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false,
-        "on-click": "kitty -e btop"
-    },
-    "memory": {
-        "format": "{}% 󰧑",
-        "on-click": "kitty -e btop"
-    },
-    "battery": {
-        "states": {
-             "good": 50,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% 󰂉",
-        "format-plugged": "{capacity}% ",
-        "format-icons": ["", "", "", "", ""],
-        "on-click": "sh ~/.config/waybar/scripts/battery.sh"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -53,34 +27,22 @@
         },
         "on-click": "flatpak run org.pipewire.Helvum"
     },
-    "custom/power": {
-        "format": "⏻",
-        "escape": true,
-        "on-click": "sh ~/.config/waybar/scripts/powermenu.sh"
-    },
-    "custom/vm": {
-        "format": "󰍹 ",
-        "escape": true,
-        "on-click": "sh ~/scripts/virtcli/virt.sh"
-    },
     "custom/media": {
         "exec": "echo 󰎈 $(playerctl metadata title) // $(playerctl metadata artist)",
         "escape": true,
         "on-click": "playerctl play-pause",
         "interval": 60
     },
-    "custom/update": {
-        "format": " 󰏖 ",
-        "exec": "sh ~/.config/waybar/scripts/updates.sh",
+    "custom/statusicons": {
         "escape": true,
-        "on-click": "kitty -e sh ~/.config/waybar/scripts/updatesys.sh",
-        "interval": 3600
+        "exec": "sh ~/.config/waybar/scripts/statusicons.sh",
+        "interval": 30
     },
-    "custom/wallpaper": {
-        "format": "",
+    "custom/cmd": {
+        "format": " >_ ",
         "escape": true,
-        "on-click": "sh ~/.config/waybar/scripts/wallpaper.sh"
-   }
-   
+        "on-click": "sh ~/.config/hypr/scripts/cmdbar.sh",
+        "interval": 3600
+    }
 }
 
