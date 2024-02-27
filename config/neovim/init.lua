@@ -60,11 +60,11 @@ vim.cmd "map <C-q> :wq <Enter>" -- Save and quit file
 
 -- Telescope
 vim.cmd "map <C-f> :Telescope live_grep <Enter>" -- Search in file
-vim.cmd "map <C-T> :Telescope colorscheme <Enter>" -- Change colorscheme
+vim.cmd "map <C-t> :Telescope colorscheme <Enter>" -- Change colorscheme
 
 -- Harpoon
 vim.cmd "map <C-y> :lua require('harpoon.mark').add_file() <Enter>" -- Add file to harpoon
-vim.cmd "map <C-t> :lua require('harpoon.mark').rm_file() <Enter>" -- Add remove to harpoon
+vim.cmd "map <C-g> :lua require('harpoon.mark').rm_file() <Enter>" -- Add remove to harpoon
 vim.cmd "map <C-e> :Telescope harpoon marks <Enter>"
 
 -- NERDTree BINDS
