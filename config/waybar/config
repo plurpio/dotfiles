@@ -59,9 +59,10 @@
         "on-click": "sh ~/.config/waybar/scripts/powermenu.sh"
     },
     "custom/media": {
+        "format": "󰎈 {}",
         "exec": "playerctl metadata title",
         "escape": true,
-        "on-click": "sh ~/.config/waybar/scripts/powermenu.sh",
+        "on-click": "playerctl play-pause",
         "interval": 60
     },
     "custom/update": {
