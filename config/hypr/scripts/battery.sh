@@ -5,7 +5,7 @@ performance="    Performance"
 
 menu="$saving\n$performance"
 
-selected="$(echo -e "$menu" | tofi --prompt "CPU Power mode")"
+selected="$(echo -e "$menu" | tofi --prompt "Battery Mode")"
 
 case $selected in
     $saving)      

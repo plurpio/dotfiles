@@ -11,6 +11,7 @@ option=$(echo -e "Wallpaper\n"\
 "Update\n"\
 "Logout\n"\
 "Games\n"\
+"Brightness\n"\
 "Theme" | tofi --prompt "What would you like to do?")
 
 case $option in
@@ -31,6 +32,9 @@ case $option in
     ;;
   Update)
     kitty -e sh $SCRIPTDIR/update.sh
+    ;;
+  Brightness)
+    sh $SCRIPTDIR/brightness.sh
     ;;
   Logout)
     pkill -u nico

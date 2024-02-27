@@ -6,7 +6,7 @@ shutdown="⏻ Shutdown"
 
 menu="$lock\n$restart\n$shutdown"
 
-selected="$(echo -e "$menu" | tofi --prompt "What do you want to do?")"
+selected="$(echo -e "$menu" | tofi --prompt "Power")"
 
 case $selected in
     $lock)      

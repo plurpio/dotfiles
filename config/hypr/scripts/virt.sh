@@ -1,6 +1,6 @@
 #! /bin/bash
 
-choice=$(echo -e "Add\n$(virsh list --all --name)" | tofi --prompt="Select a virtual machine: ")
+choice=$(echo -e "Add\n$(virsh list --all --name)" | tofi --prompt="Virtual Machine")
 
 case "$choice" in
   Add)

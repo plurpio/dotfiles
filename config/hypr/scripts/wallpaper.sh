@@ -1,9 +1,9 @@
 #! /bin/bash
 
 # Choosing Options
-a=~/media/backgrounds/$(ls ~/media/backgrounds | tofi --prompt 'What wallpaper do you want to use?')
+a=~/media/backgrounds/$(ls ~/media/backgrounds | tofi --prompt 'Wallpaper')
 
-options=$(echo $(echo -e $(wal --theme | grep -E "^[[:space:]]+-[[:space:]]" | grep -v -E "random|random_dark|random_light" | awk '{print $2}')"\nWallpaper") | sed 's/ /\n/g' | tofi --prompt "What colourscheme do you want?")
+options=$(echo $(echo -e $(wal --theme | grep -E "^[[:space:]]+-[[:space:]]" | grep -v -E "random|random_dark|random_light" | awk '{print $2}')"\nWallpaper") | sed 's/ /\n/g' | tofi --prompt "Colourscheme")
 
 case $options in
   Wallpaper)

@@ -6,7 +6,7 @@ steamgames=$(for i in "$HOME/.var/app/com.valvesoftware.Steam/.local/share/Steam
 
 games=$(echo -e "$steamgames\n$prisminstances\nGenshin Impact")
 
-option=$(tofi --prompt "What game do you want to play?" <<< $games)
+option=$(tofi --prompt "Game" <<< $games)
 
 case $steamgames in
   *"$option"*)
