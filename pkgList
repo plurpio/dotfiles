@@ -29,6 +29,7 @@ unzip
 cpupower
 man-db
 ripgrep
+zoxide
 
 # Social
 dev.vencord.Vesktop

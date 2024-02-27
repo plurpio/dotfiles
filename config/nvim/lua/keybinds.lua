@@ -29,6 +29,8 @@ vim.keymap.set("n", "<leader>t", "<cmd>Telescope colorscheme <CR>") -- Change co
 -- NvimTree
 vim.keymap.set("n", "<leader>d", "<cmd>NvimTreeToggle <CR>") -- Opens dir tree
 
+vim.keymap.set("v", "p", "pgvy") --  Gets back clipboard after pasting
+
 -- Learning Binds
 vim.keymap.set("n", "<up>", "")
 vim.keymap.set("n", "<down>", "")

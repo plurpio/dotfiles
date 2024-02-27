@@ -2,6 +2,7 @@
 # Sourcing
 source "$XDG_CONFIG_DIR/zsh/alias.sh"
 source "$XDG_CONFIG_DIR/zsh/flatpakAlias.sh"
+source "$XDG_CONFIG_DIR/zsh/zoxide.sh"
 
 # History 
 HISTFILE="$XDG_CONFIG_DIR/zsh/.history"
