@@ -1,5 +1,5 @@
 require('dashboard').setup ({
-    theme = 'hyper',
+    theme = 'doom',
     config = {
       header = {
         '',
@@ -14,39 +14,46 @@ require('dashboard').setup ({
         '   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ',
         '    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ',
         '   █   █  █      ▄▄           ▄▀   ',
-        '',
-        '',
+        '▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀',
         '',
       },
-      shortcut = {
-        { desc = '󰊳 update', group = '@property', action = 'Lazy update', key = 'u' },
+      center = {
         {
-          icon = ' ',
           icon_hl = '@variable',
-          desc = 'Files',
+          desc = ' Find files',
           group = 'Label',
           action = 'Telescope find_files',
           key = 'f',
+          key_format = ' %s',
         },
         {
-          desc = ' scripts',
+          desc = ' Open scripts',
           group = 'Label',
           action = 'edit ~/scripts/',
+          key_format = ' %s',
           key = 's',
         },
         {
-          desc = ' dotfiles',
+          desc = ' Open dotfiles',
           group = 'Number',
           action = 'edit ~/repos/dotfiles/',
           key = 'd',
+          key_format = ' %s',
         },
         {
-          desc = '󱠓 colourscheme',
+          desc = '󱠓 Change theme',
           group = 'label',
           action = 'Telescope colorscheme',
           key = 'c',
+          key_format = ' %s',
+        },
+        { desc = '󰊳 Update plugins                    ',
+          group = '@property',
+          action = 'Lazy update',
+          key = 'u',
+          key_format = ' %s',
         },
       },
-    footer = {"  scaring the ever living shit out of vscode users"}
+    footer = {" emacs users should never be trusted"}
     },
   })
