@@ -105,12 +105,12 @@ def pkgInstallation():
 def dotfileInstallation():
     for i in os.listdir("../config/"):
         if i == "zsh":
-            os.system("ln -s ../config/zsh/.zshrc $HOME/.zshrc") # it works i guess
+            os.system("ln -s ../config/zsh/.zshrc ~/.zshrc") # it works i guess
             console.log("Symlinked .zshrc to the home directory")
             continue
         cmd = "mkdir $HOME/.config/"+i
         os.system(cmd)
-        cmd = "ln -s ../config/"+i+" $HOME/.config/"
+        cmd = "ln -s ../config/"+i+" ~/.config"
         os.system(cmd)
         console.log("Symlinked", i, "to the config directory.")
 
