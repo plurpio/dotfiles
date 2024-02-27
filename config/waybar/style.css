@@ -1,0 +1,150 @@
+@define-color bg rgb(36, 39, 58);
+@define-color text rgb(202, 211, 245);
+@define-color blue rgb(138, 173, 244);
+@define-color green rgb(166, 218, 149);
+@define-color red rgb(237, 135, 150);
+@define-color purple rgb(198, 160, 246);
+@define-color yellow rgb(238, 212, 159);
+@define-color orange rgb(245, 169, 127);
+@define-color pink rgb(245, 189, 230);
+
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: @bg;
+    color: @text;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: @purple;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button.urgent {
+
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#pulseaudio,
+#wireplumber,
+#window,
+#tray,
+
+/*#custom-powermenu {
+  background-color: @red;
+}*/
+
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock {
+    color: @yellow;
+}
+
+#battery {
+    color: @green;
+}
+
+#battery.charging, #battery.plugged {
+    color: @green;
+}
+
+@keyframes blink {
+    to {
+
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    color: @blue;
+    padding-right: 5px;
+}
+
+#memory {
+    color: @orange;
+    padding-right: 5px;
+}
+
+#pulseaudio {
+    color: @pink;
+    padding-right: 5px;
+}
+
+#wireplumber {
+    color: #000000;
+    padding-right: 5px;
+}
+
+#custom-power {
+    color: @bg;
+    background-color: @red;
+    min-width: 45px;
+}
+
+#tray {
+  color: @red;
+  padding-right: 5px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
