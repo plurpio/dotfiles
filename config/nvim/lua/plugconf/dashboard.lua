@@ -29,6 +29,12 @@ require('dashboard').setup ({
           key = 'f',
         },
         {
+          desc = ' scripts',
+          group = 'Label',
+          action = 'edit ~/scripts/',
+          key = 's',
+        },
+        {
           desc = ' dotfiles',
           group = 'Number',
           action = 'edit ~/repos/dotfiles/',
