@@ -113,8 +113,6 @@ def dotfileInstallation():
         os.system(cmd)
         console.log("Symlinked", i, "to the config directory.")
 
-    os.system("chsh -s /bin/zsh")
-
 #
 # Enabling services
 #
