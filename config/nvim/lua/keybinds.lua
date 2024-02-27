@@ -6,7 +6,7 @@ vim.g.mapleader = ' '
 
 vim.keymap.set("n", "<leader>w", "<cmd>w <CR>") -- Save file
 vim.keymap.set("n", "<leader>q", "<cmd>wq <CR>") -- Save and quit file
-vim.cmd "map ec :lua require('conform').format() <Enter>"
+vim.cmd "map <leader>c :lua require('conform').format() <Enter>"
 
 -- Git
 vim.keymap.set("n", "<leader>g", "<cmd>Neogit <CR>") -- Opens NeoGit
