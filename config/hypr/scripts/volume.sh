@@ -4,297 +4,306 @@ option=$(echo -e "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n
 
 case $option in
   0)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 0
+    pactl set-sink-volume 0 0%
     ;;
   1)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 1
+    pactl set-sink-volume 0 1%
+    ;;
+  2)
+    pactl set-sink-volume 0 2%
+    ;;
+  3)
+    pactl set-sink-volume 0 3%
+    ;;
+  4)
+    pactl set-sink-volume 0 4%
     ;;
   5)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5
+    pactl set-sink-volume 0 5%
     ;;
   6)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 6
+    pactl set-sink-volume 0 6%
     ;;
   7)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 7
+    pactl set-sink-volume 0 7%
     ;;
   8)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 8
+    pactl set-sink-volume 0 8%
     ;;
   9)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 9
+    pactl set-sink-volume 0 9%
     ;;
   10)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 10
+    pactl set-sink-volume 0 10%
     ;;
   11)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 11
+    pactl set-sink-volume 0 11%
     ;;
   12)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 12
+    pactl set-sink-volume 0 12%
     ;;
   13)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 13
+    pactl set-sink-volume 0 13%
     ;;
   14)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 14
+    pactl set-sink-volume 0 14%
     ;;
   15)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 15
+    pactl set-sink-volume 0 15%
     ;;
   16)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 16
+    pactl set-sink-volume 0 16%
     ;;
   17)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 17
+    pactl set-sink-volume 0 17%
     ;;
   18)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 18
+    pactl set-sink-volume 0 18%
     ;;
   19)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 19
+    pactl set-sink-volume 0 19%
     ;;
   20)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 20
+    pactl set-sink-volume 0 20%
     ;;
   21)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 21
+    pactl set-sink-volume 0 21%
     ;;
   22)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 22
+    pactl set-sink-volume 0 22%
     ;;
   23)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 23
+    pactl set-sink-volume 0 23%
     ;;
   24)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 24
+    pactl set-sink-volume 0 24%
     ;;
   25)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 25
+    pactl set-sink-volume 0 25%
     ;;
   26)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 26
+    pactl set-sink-volume 0 26%
     ;;
   27)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 27
+    pactl set-sink-volume 0 27%
     ;;
   28)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 28
+    pactl set-sink-volume 0 28%
     ;;
   29)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 29
+    pactl set-sink-volume 0 29%
     ;;
   30)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 30
+    pactl set-sink-volume 0 30%
     ;;
   31)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 31
+    pactl set-sink-volume 0 31%
     ;;
   32)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 32
+    pactl set-sink-volume 0 32%
     ;;
   33)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 33
+    pactl set-sink-volume 0 33%
     ;;
   34)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 34
+    pactl set-sink-volume 0 34%
     ;;
   35)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 35
+    pactl set-sink-volume 0 35%
     ;;
   36)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 36
+    pactl set-sink-volume 0 36%
     ;;
   37)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 37
+    pactl set-sink-volume 0 37%
     ;;
   38)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 38
+    pactl set-sink-volume 0 38%
     ;;
   39)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 39
+    pactl set-sink-volume 0 39%
     ;;
   40)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 40
+    pactl set-sink-volume 0 40%
     ;;
   41)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 41
+    pactl set-sink-volume 0 41%
     ;;
   42)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 42
+    pactl set-sink-volume 0 42%
     ;;
   43)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 43
+    pactl set-sink-volume 0 43%
     ;;
   44)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 44
+    pactl set-sink-volume 0 44%
     ;;
   45)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 45
+    pactl set-sink-volume 0 45%
     ;;
   46)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 46
+    pactl set-sink-volume 0 46%
     ;;
   47)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 47
+    pactl set-sink-volume 0 47%
     ;;
   48)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 48
+    pactl set-sink-volume 0 48%
     ;;
   49)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 49
+    pactl set-sink-volume 0 49%
     ;;
   50)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 50
+    pactl set-sink-volume 0 50%
     ;;
   51)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 51
+    pactl set-sink-volume 0 51%
     ;;
   52)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 52
+    pactl set-sink-volume 0 52%
     ;;
   53)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 53
+    pactl set-sink-volume 0 53%
     ;;
   54)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 54
+    pactl set-sink-volume 0 54%
     ;;
   55)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 55
+    pactl set-sink-volume 0 55%
     ;;
   56)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 56
+    pactl set-sink-volume 0 56%
     ;;
   57)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 57
+    pactl set-sink-volume 0 57%
     ;;
   58)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 58
+    pactl set-sink-volume 0 58%
     ;;
   59)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 59
+    pactl set-sink-volume 0 59%
     ;;
   60)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 60
+    pactl set-sink-volume 0 60%
     ;;
   61)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 61
+    pactl set-sink-volume 0 61%
     ;;
   62)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 62
+    pactl set-sink-volume 0 62%
     ;;
   63)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 63
+    pactl set-sink-volume 0 63%
     ;;
   64)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 64
+    pactl set-sink-volume 0 64%
     ;;
   65)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 65
+    pactl set-sink-volume 0 65%
     ;;
   66)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 66
+    pactl set-sink-volume 0 66%
     ;;
   67)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 67
+    pactl set-sink-volume 0 67%
     ;;
   68)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 68
+    pactl set-sink-volume 0 68%
     ;;
   69)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 69
+    pactl set-sink-volume 0 69%
     ;;
   70)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 70
+    pactl set-sink-volume 0 70%
     ;;
   71)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 71
+    pactl set-sink-volume 0 71%
     ;;
   72)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 72
+    pactl set-sink-volume 0 72%
     ;;
   73)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 73
+    pactl set-sink-volume 0 73%
     ;;
   74)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 74
+    pactl set-sink-volume 0 74%
     ;;
   75)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 75
+    pactl set-sink-volume 0 75%
     ;;
   76)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 76
+    pactl set-sink-volume 0 76%
     ;;
   77)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 77
+    pactl set-sink-volume 0 77%
     ;;
   78)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 78
+    pactl set-sink-volume 0 78%
     ;;
   79)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 79
+    pactl set-sink-volume 0 79%
     ;;
   80)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 80
+    pactl set-sink-volume 0 80%
     ;;
   81)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 81
+    pactl set-sink-volume 0 81%
     ;;
   82)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 82
+    pactl set-sink-volume 0 82%
     ;;
   83)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 83
+    pactl set-sink-volume 0 83%
     ;;
   84)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 84
+    pactl set-sink-volume 0 84%
     ;;
   85)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 85
+    pactl set-sink-volume 0 85%
     ;;
   86)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 86
+    pactl set-sink-volume 0 86%
     ;;
   87)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 87
+    pactl set-sink-volume 0 87%
     ;;
   88)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 88
+    pactl set-sink-volume 0 88%
     ;;
   89)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 89
+    pactl set-sink-volume 0 89%
     ;;
   90)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 90
+    pactl set-sink-volume 0 90%
     ;;
   91)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 91
+    pactl set-sink-volume 0 91%
     ;;
   92)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 92
+    pactl set-sink-volume 0 92%
     ;;
   93)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 93
+    pactl set-sink-volume 0 93%
     ;;
   94)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 94
+    pactl set-sink-volume 0 94%
     ;;
   95)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 95
+    pactl set-sink-volume 0 95%
     ;;
   96)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 96
+    pactl set-sink-volume 0 96%
     ;;
   97)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 97
+    pactl set-sink-volume 0 97%
     ;;
   98)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 98
+    pactl set-sink-volume 0 98%
     ;;
   99)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 99
+    pactl set-sink-volume 0 99%
     ;;
   100)
-    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 100
+    pactl set-sink-volume 0 100%
     ;;
 esac
