@@ -50,6 +50,7 @@ alias v='nvim'
 
 # Development tool alias
 alias py='python3'
+alias gitlc='git log --branches --not --remotes' # Shows commits that have not been pushed
 
 # Pywal
 (cat ~/.cache/wal/sequences &)
