@@ -83,8 +83,8 @@ menu(True, False, False)
 #
 
 aur = open("aur")
-#os.system("mkdir $HOME/repos/")
-#os.system("cd ~/repos && git clone https://aur.archlinux.org/paru && cd paru && makepkg -si")
+os.system("mkdir $HOME/repos/")
+os.system("cd ~/repos && git clone https://aur.archlinux.org/paru && cd paru && makepkg -si")
 
 for i in aur:
     if "#" in i: continue
