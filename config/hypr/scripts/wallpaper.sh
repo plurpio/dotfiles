@@ -17,16 +17,3 @@ hyprctl hyprpaper wallpaper eDP-1,~/.cache/wallpaper
 #killall waybar
 notify-send 'Wallpaper' 'Wallpaper and colourscheme changed' -i ~/.cache/wallpaper
 #nohup waybar > /dev/null &
-;;
-BatteryMode)
-selected="$(echo -e "    Saving\n    Performance" | tofi --prompt "CPU Power mode")"
-
-case $selected in
-    $saving)      
-      kitty -e sudo cpupower frequency-set -g powersave && notify-send "Power mode changed" "Power mode changed to power savings."
-      ;;
-    $performance)
-      kitty -e sudo cpupower frequency-set -g performance && notify-send "Power mode changed" "Power mode changed to performance."
-      ;;
-esac
-
