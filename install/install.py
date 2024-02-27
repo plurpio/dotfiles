@@ -93,7 +93,7 @@ for i in os.listdir("../config/"):
 
 services = open("services")
 for i in services:
-    cmd = "sudo systemctl enable --now"+i
+    cmd = "sudo systemctl enable --now"+i)
     os.system(cmd)
     console.log("Successfully enabled service:", i
 
