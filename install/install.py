@@ -110,7 +110,7 @@ def dotfileInstallation():
             continue
         cmd = "mkdir $HOME/.config/"+i
         os.system(cmd)
-        cmd = "ln -s ../config/"+i+"/* $HOME/.config/"+i+"/"
+        cmd = "ln -s ../config/"+i+" $HOME/.config/"
         os.system(cmd)
         console.log("Symlinked", i, "to the config directory.")
 
