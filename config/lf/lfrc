@@ -1,0 +1,76 @@
+set drawbox true
+set ignorecase true
+set hidden true
+
+set previewer ~/.config/lf/lf_kitty_preview
+set cleaner ~/.config/lf/lf_kitty_cleaner
+
+cmd touch ${{
+    printf "Filename: " "$f"
+    read ans
+    touch $ans
+}}
+
+cmd trash ${{
+    printf "Trash '%s'? [y/n] " "$f"
+    read -r ans
+    if [ "$ans" = "y" ]; then
+        trash-put "$f"
+    else
+        echo "aborting"
+    fi
+}}
+
+cmd unarchive ${{
+    case "$f" in
+        *.zip) unzip "$f" ;;
+        *.tar.gz) tar -xzvf "$f" ;;
+        *.tar.bz2) tar -xjvf "$f" ;;
+        *.tar) tar -xvf "$f" ;;
+        *) echo "Unsupported format" ;;
+    esac
+}}
+cmd unarchive ${{
+    case "$f" in
+        *.zip) unzip "$f" ;;
+        *.tar.gz) tar -xzvf "$f" ;;
+        *.tar.bz2) tar -xjvf "$f" ;;
+        *.tar) tar -xvf "$f" ;;
+        *) echo "Unsupported format" ;;
+    esac
+}}
+
+cmd setwall ${{
+    wal -i "$f"
+    swww img -t center "$f"
+}}
+
+cmd nvim ${{
+    nvim $f
+}}
+
+# Key unbinds
+map d 
+map e
+
+# File creation
+map fc touch
+map ff mkdir
+
+# File Manipulation
+map dd cut
+map DD trash
+map ae unarchive
+
+# File actions
+map et nvim
+map bs setwall
+
+# Goto Directory
+map gh cd ~
+map gc cd ~/.config/
+map gd cd ~/downloads/
+map gm cd ~/media/
+map gb cd ~/media/backgrounds/
+map gs cd ~/scripts/
+map gr cd ~/repos/
