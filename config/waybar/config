@@ -7,7 +7,7 @@
     
     // Choose the order of the modules
     "modules-left": ["custom/cmd", "hyprland/workspaces", "tray"],
-    //"modules-center": ["custom/media"],
+    "modules-center": ["custom/media"],
     "modules-right": ["pulseaudio", "custom/statusicons"],
     "tray": {
         // "icon-size": 21,
@@ -28,7 +28,7 @@
         "on-click": "flatpak run org.pipewire.Helvum"
     },
     "custom/media": {
-        "exec": "echo 󰎈 $(playerctl metadata title) // $(playerctl metadata artist)",
+        "exec": "echo 󰎈 $(playerctl metadata title)",
         "escape": true,
         "on-click": "playerctl play-pause",
         "interval": 60

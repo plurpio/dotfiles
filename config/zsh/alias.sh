@@ -23,7 +23,8 @@ alias v='nvim'
 alias py='python3'
 alias gitlc='git log --branches --not --remotes' # Shows commits that have not been pushed
 alias pmode='sudo cpupower frequency-set -g'
-alias ytmp3='yt-dlp -x --audio-format mp3 --audio-quality 0'
+alias ytmp3='yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --embed-chapters --embed-metadata'
+alias yt-dlp='yt-dlp --embed-thumbnail --embed-chapters --embed-metadata'
 alias wget='wget --no-hsts'
 
 # Flatpak alias
