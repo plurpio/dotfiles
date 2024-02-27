@@ -132,6 +132,13 @@ button:hover {
     padding-right: 0px;
 }
 
+#custom-wallpaper {
+    color: @color15;
+    min-width: 25px;
+    padding-right: 0px;
+}
+
+
 #tray {
   color: @color9;
 }
