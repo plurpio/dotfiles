@@ -66,7 +66,8 @@
     "custom/update": {
         "exec": "sh ~/.config/waybar/scripts/updates.sh",
         "escape": true,
-        "on-click": "kitty -e sh ~/.config/waybar/scripts/updatesys.sh"
+        "on-click": "kitty -e sh ~/.config/waybar/scripts/updatesys.sh",
+        "interval": 3600
     },
     "custom/wallpaper": {
         "format": "",
