@@ -37,13 +37,21 @@ require("lazy").setup({
 	  "navarasu/onedark.nvim"
   },
 
+  {
+    "ellisonleao/gruvbox.nvim"
+  },
+
+  {
+    "folke/tokyonight.nvim"
+  },
+
 ------------
 -- EDITOR --
 ------------
 
   {
-      'nvimdev/dashboard-nvim',
-      dependencies = { "nvim-tree/nvim-web-devicons" },
+    'nvimdev/dashboard-nvim',
+    dependencies = { "nvim-tree/nvim-web-devicons" }
   },
 
   {
@@ -98,7 +106,7 @@ require("lazy").setup({
   {
 	  'L3MON4D3/LuaSnip'
   },
-  
+
   {
     'rafamadriz/friendly-snippets'
   },
@@ -109,13 +117,6 @@ require("lazy").setup({
 
   {
 	  "lewis6991/gitsigns.nvim"
-  },
-
--- OTHER
-  "vim-airline/vim-airline",
-  "vim-airline/vim-airline-themes",
-  "nvim-tree/nvim-tree.lua",
-  "ryanoasis/vim-devicons",
-  { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" }},
+  }
 })
 
