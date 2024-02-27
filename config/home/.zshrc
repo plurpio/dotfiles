@@ -43,8 +43,5 @@ alias v='nvim'
 alias py='python3'
 alias gitlc='git log --branches --not --remotes' # Shows commits that have not been pushed
 
-# Misc
-alias update='pacman -Syu && flatpak update && paru -Syu'
-
 # Hardware alias
 alias pmode='sudo cpupower frequency-set -g'
