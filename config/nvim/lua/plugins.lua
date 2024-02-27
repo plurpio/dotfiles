@@ -42,7 +42,7 @@ require("lazy").setup({
   },
 
   {
-    "dylanaraps/wal.vim"
+    "rose-pine/neovim"
   },
 
 ------------
