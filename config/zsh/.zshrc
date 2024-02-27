@@ -16,8 +16,8 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Prompt
-PROMPT="%~ %{$fg[cyan]%}$ "
-RPROMPT="%{$fg[red]%}%n@%m"
+PROMPT="%~ %{$fg[green]%}$ "
+RPROMPT="%{$fg[yellow]%}%n@%m"
 
 # Set enviroment variables
 EDITOR=nvim
