@@ -44,7 +44,7 @@ cmd setwall ${{
     killall waybar
     wal -i "$f"
     nohup waybar > /dev/null &
-    swww img -t random "$f"
+    swww img -t grow "$f"
 }}
 
 cmd nvim ${{

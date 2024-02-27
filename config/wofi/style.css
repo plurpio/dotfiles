@@ -1,41 +1,41 @@
-@define-color bg #24273a;
-@define-color accent #9447ca;
-@define-color text #cad3f5;
+/* Put your username into here */
+@import "/home/nico/.cache/wal/colors-waybar.css";
+
+@define-color accent @color11;
 
 #window {
-  background-color: @bg; 
-  color: @text; 
+  background-color: @background; 
+  color: @foreground; 
 }
 
 
 #outer-box {
-  background-color: @bg; 
+  background-color: @background; 
 }
 
 
 #input {
-  background-color: @bg; 
-  color: @text;
+  background-color: @background; 
+  color: @foreground;
   border: 0;
 }
 
 
 #scroll {
-  background-color: @bg; 
+  background-color: @background; 
 }
 
 
 #inner-box {
-  background-color: @bg; 
+  background-color: @background; 
 }
 
 
 #entry:unselected {
-  color: @text; 
+  color: @foreground; 
 }
 
 
 #entry:selected {
   background-color: @accent; 
 }
-
