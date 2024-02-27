@@ -25,6 +25,7 @@ lf
 wget
 unzip
 cpupower
+man-db
 
 # Social
 dev.vencord.Vesktop
@@ -47,6 +48,7 @@ org.gimp.GIMP
 org.audacityteam.Audacity
 org.kde.kdenlive
 
+org.pipewire.Helvum
 io.github.celluloid_player.Celluloid
 sh.cider.Cider
 
@@ -56,3 +58,6 @@ zsh
 zsh-syntax-highlighting
 zsh-autosuggestions
 polkit-kde-agent
+
+# Libs
+libnotify
