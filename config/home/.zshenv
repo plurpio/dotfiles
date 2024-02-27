@@ -12,3 +12,4 @@ export PATH="$HOME/.local/bin:$PATH"
 export EDITOR="nvim"
 export TERMINAL="kitty"
 export ZDOTDIR="$XDG_CONFIG_DIR/zsh"
+export PYTHONSTARTUP=~/.config/pythonrc

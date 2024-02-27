@@ -1,6 +1,6 @@
 #!/bin/bash
 
-prisminstances=$(ls $HOME/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances)
+prisminstances=$(ls $HOME/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances | grep -Ev '(instgroups\.json|\.LAUNCHER_TEMP)' | sed 's/^/Minecraft: /')
  
 steamgames=$(for i in "$HOME/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps"/*.acf; do echo "$(grep -E '^\s+"name"' "$i" | sed -E 's/^\s+"name"\s+"(.*)".*/\1/') ($(grep -E '^\s+"appid"' "$i" | sed -E 's/^\s+"appid"\s+"([0-9]+)".*/\1/'))"; echo; done)
 
@@ -20,7 +20,7 @@ esac
 
 case $prisminstances in
   *"$option"*)
-      org.prismlauncher.PrismLauncher -l "$option"
+    org.prismlauncher.PrismLauncher -l "$(echo $option | sed "s/Minecraft: //")"
       exit
       ;;
   "")
