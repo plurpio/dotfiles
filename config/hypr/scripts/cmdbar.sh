@@ -10,6 +10,7 @@ option=$(echo -e "Wallpaper\n"\
 "Battery\n"\
 "Update\n"\
 "Logout\n"\
+"Games\n" \
 "Theme" | tofi --prompt "What would you like to do?")
 
 case $option in
@@ -33,6 +34,9 @@ case $option in
     ;;
   Logout)
     pkill -u nico
+    ;;
+  Games)
+    sh $SCRIPTDIR/games.sh
     ;;
   Lock)
     swaylock -f -e -S --grace 2 --fade-in 0.3 --effect-blur 25x25 --indicator --ring-color 9447ca --indicator-radius 100 --indicator-thickness 13 --effect-greyscale
