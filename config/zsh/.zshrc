@@ -21,5 +21,5 @@ compinit
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Prompt
-PROMPT="%B%F{blue}󰣇%f%b%F{cyan} %f%K{cyan}%b%F{black}%~%k%F{cyan} %f"
+PROMPT="%F{magenta}%f%K{magenta}%F{black}󰣇 %f%k%K{magenta}%F{blue}%f%k%K{blue}%F{black}%~%f%k%F{blue}%f "
 RPROMPT="%{$fg[yellow]%}%n@%m"
