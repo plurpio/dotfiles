@@ -4,7 +4,7 @@ choice=$(echo -e "Add\n$(virsh list --all --name)" | tofi --prompt="Select a vir
 
 case "$choice" in
   Add)
-    kitty -e virtAdd.sh
+    kitty -e ~/.config/hypr/scripts/virtAdd.sh
     remote-viewer spice://127.0.0.1:5900 -f
     ;;
   "")
