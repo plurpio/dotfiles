@@ -1,4 +1,4 @@
-# Make sure that Kew is closed before editing this file in order for changes to take effect.
+# Make sure that kew is closed before editing this file in order for changes to take effect.
 
 path=/home/nico/media/music
 coverEnabled=1
@@ -6,6 +6,22 @@ coverAnsi=1
 visualizerEnabled=1
 visualizerHeight=5
 useProfileColors=1
+allowNotifications=1
+hideLogo=0
+hideHelp=0
+lastVolume=100
+
+# Color values are 0=Black, 1=Red, 2=Green, 3=Yellow, 4=Blue, 5=Magenta, 6=Cyan, 7=White
+# These mostly affect the library view.
+
+# Logo color: 
+color=6
+# Header color in library view: 
+artistColor=6
+# Now playing song text in library view: 
+titleColor=6
+# Color of enqueued songs in library view: 
+enqueuedColor=6
 
 # Key Bindings:
 
@@ -21,7 +37,6 @@ togglePause=p
 toggleColorsDerivedFrom=i
 toggleVisualizer=v
 toggleCovers=c
-#toggleAscii=b
 toggleAscii=
 toggleRepeat=r
 toggleShuffle=s
@@ -29,8 +44,6 @@ seekBackward=a
 seekForward=d
 savePlaylist=x
 addToMainPlaylist=.
-lastVolume=100
-allowNotifications=0
 quit=q
 
 # For special keys use terminal codes: OS, for F4 for instance. This can depend on the terminal.
