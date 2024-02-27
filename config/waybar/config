@@ -6,7 +6,7 @@
     "spacing": 4, // Spacing inbetween each module
     
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "custom/wallpaper", "tray"],
+    "modules-left": ["hyprland/workspaces", "custom/wallpaper", "custom/vm", "tray"],
     "modules-center": ["custom/media"],
     "modules-right": ["pulseaudio", "cpu", "memory", "battery", "clock", "custom/update", "custom/power"],
     "tray": {
@@ -57,6 +57,11 @@
         "format": "⏻",
         "escape": true,
         "on-click": "sh ~/.config/waybar/scripts/powermenu.sh"
+    },
+    "custom/vm": {
+        "format": "󰍹 ",
+        "escape": true,
+        "on-click": "sh ~/scripts/virtcli/virt.sh"
     },
     "custom/media": {
         "exec": "echo 󰎈 $(playerctl metadata title) // $(playerctl metadata artist)",
