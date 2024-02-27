@@ -8,28 +8,31 @@ options=$(echo $(echo -e $(wal --theme | grep -E "^[[:space:]]+-[[:space:]]" | g
 case $options in
   Wallpaper)
     wal -i $a
+    cp $a ~/.cache/wallpaper
     ;;
   "")
     wal -i $a
+    cp $a ~/.cache/wallpaper
     ;;
   *)
     wal --theme $options
+    case $(echo -e "Yes\nNo" | tofi --prompt "Do you want to tint the wallpaper?") in
+      Yes)
+        magick $a -fill "$(cat $HOME/.cache/wal/colors.json | jq '.colors.color14' | sed s/\"//g)" -tint 100 $HOME/.cache/wallpaper
+        ;;
+      *)
+        cp $a ~/.cache/wallpaper
+        ;;
+    esac
     ;;
 esac
 
 
 # After pywal stuff
-cp $a ~/.cache/wallpaper
 cp ~/.cache/wal/colors-tofi ~/.config/tofi/colors-tofi
 
-if pgrep -x "waybar" > /dev/null
-then
-  killall waybar
-  nohup waybar > /dev/null &
-else
-    cp ~/.cache/wal/colors.scss ~/.config/eww/colors.scss
-fi
-
+killall waybar
+nohup waybar > /dev/null &
 
 hyprctl hyprpaper unload ~/.cache/wallpaper
 sleep 0.1 # Hyprpaper gets stuck on this
