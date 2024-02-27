@@ -5,6 +5,7 @@ wofi
 python-pywal
 mako
 ly
+xdg-desktop-portal-hyprland
 
 # Essentials
 org.mozilla.firefox
