@@ -50,7 +50,7 @@ org.audacityteam.Audacity
 org.kde.kdenlive
 
 org.pipewire.Helvum
-io.github.celluloid_player.Celluloid
+mpv
 sh.cider.Cider
 
 # System
