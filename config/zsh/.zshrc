@@ -51,5 +51,5 @@ alias py='python3'
 alias gitlc='git log --branches --not --remotes' # Shows commits that have not been pushed
 
 # Pywal
-(cat ~/.cache/wal/sequences &)
+(/bin/cat ~/.cache/wal/sequences &)
 source ~/.cache/wal/colors-tty.sh
