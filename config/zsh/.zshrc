@@ -16,8 +16,8 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Prompt
-PROMPT="%K{yellow} %k%K{yellow}%F{black}%~%f%k%K{yellow} %k%F{yellow}%f "
-# RPROMPT="%F{yellow}%f%K{yellow}%F{black}%t%f%k" # for some reason left prompt dies when this is applied
+PROMPT="%~ %{$fg[cyan]%}$ "
+RPROMPT="%{$fg[red]%}%n@%m"
 
 # Set enviroment variables
 EDITOR=nvim
