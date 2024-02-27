@@ -28,7 +28,8 @@
         "on-click": "flatpak run org.pipewire.Helvum"
     },
     "custom/media": {
-        "exec": "echo 󰎈 $(playerctl metadata title)",
+        "format": "󰎈 {}",
+        "exec": "playerctl metadata title",
         "escape": true,
         "on-click": "playerctl play-pause",
         "interval": 60

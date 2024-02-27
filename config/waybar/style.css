@@ -92,7 +92,7 @@ button:hover {
 }
 
 #custom-media {
-  color: @accent;
+  color: @color13;
 }
 
 #custom-cmd {
