@@ -8,10 +8,12 @@ ly
 org.mozilla.firefox
 org.flameshot.Flameshot
 org.pipewire.Helvum
+virt-manager
+neovim
+neofetch
+#^^^^^ this is essential to every linux users system
 
 # CLI
-neofetch
-neovim
 tmux
 btop
 cmatrix
