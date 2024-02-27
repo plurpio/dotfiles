@@ -14,8 +14,7 @@ require('dashboard').setup ({
         '   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ',
         '    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ',
         '   █   █  █      ▄▄           ▄▀   ',
-        '',
-        '',
+        '▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀',
         '',
       },
       shortcut = {
@@ -27,12 +26,6 @@ require('dashboard').setup ({
           group = 'Label',
           action = 'Telescope find_files',
           key = 'f',
-        },
-        {
-          desc = ' scripts',
-          group = 'Label',
-          action = 'edit ~/scripts/',
-          key = 's',
         },
         {
           desc = ' dotfiles',
@@ -47,6 +40,10 @@ require('dashboard').setup ({
           key = 'c',
         },
       },
-    footer = {"  scaring the ever living shit out of vscode users"}
+    packages = { enable = false },
+    project = { enable = false, limit = 0, action = 'Telescope find_files cwd=' },
+    mru = { limit = 7, cwd_only = false },
+
+    footer = {" i did not kill that emacs user"},
     },
   })
