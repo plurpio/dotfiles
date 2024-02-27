@@ -73,3 +73,4 @@ bluez-utils
 cups
 cups-pdf
 brightnessctl
+jq
