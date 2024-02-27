@@ -10,7 +10,7 @@ option=$(tofi --prompt "What game do you want to play?" <<< $games)
 
 case $steamgames in
   *"$option"*)
-      xdg-open steam://run/$(echo "$option" | sed -n 's/.*(\([0-9]\+\)).*/\1/p')
+      xdg-open steam://rungameid/$(echo "$option" | sed -n 's/.*(\([0-9]\+\)).*/\1/p')/dialog
       exit
       ;;
   "")
