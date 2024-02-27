@@ -1,23 +1,4 @@
-# History 
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-bindkey -e
-
-# Autocomplete
-autoload -U colors && colors
-zstyle :compinstall filename '$HOME/.zshrc'
-autoload -Uz compinit
-zstyle ':completion:*' menu select
-compinit
-
-# Load plugins
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Prompt
-PROMPT="%B%F{blue}󰣇%f%b%F{cyan} %f%K{cyan}%b%F{black}%~%k%F{cyan} %f"
-RPROMPT="%{$fg[yellow]%}%n@%m"
+# Alias
 
 # Get contents of directory/files
 alias ls='ls -ah --color=auto'
@@ -45,3 +26,6 @@ alias gitlc='git log --branches --not --remotes' # Shows commits that have not b
 
 # Hardware alias
 alias pmode='sudo cpupower frequency-set -g'
+
+# Flatpak alias
+alias flatpak="rm $XDG_CONFIG_DIR/zsh/flatpakAlias.sh; python3 $XDG_CONFIG_DIR/zsh/flatpakAlias.py $XDG_CONFIG_DIR/zsh/flatpakAlias.sh; source $XDG_CONFIG_DIR/zsh/flatpakAlias.sh; flatpak $@" # ik this wont do it for new app but its 2am and it wasn't working
