@@ -69,6 +69,8 @@ for i in apps:
     cmd = "sudo pacman -S --needed --noconfirm "+installApp
     os.system(cmd)
 
+close("pkgList")
+
 console.clear()
 menu(True, False)
 
@@ -84,6 +86,18 @@ for i in os.listdir("../config/"):
     cmd = "cp -r ../config/"+i+" $HOME/.config/"
     os.system(cmd)
     console.log("Copied", i, "to the config directory.")
+
+#
+# Enabling services
+#
+
+services = open("services")
+for i in services:
+    cmd = "sudo systemctl enable --now"+i
+    os.system(cmd)
+    console.log("Successfully enabled service:", i
+
+close("services")
 
 console.clear()
 menu(True, True)
