@@ -74,7 +74,7 @@
     "custom/wallpaper": {
         "format": "",
         "escape": true,
-        "on-click": "a=~/media/backgrounds/$(ls ~/media/backgrounds | wofi -i --dmenu -p 'Background') && swww img $a && killall waybar && wal -i $a && notify-send 'Wallpaper' 'Wallpaper and colourscheme changed' -i $a && nohup waybar > /dev/null &"
+        "on-click": "a=~/media/backgrounds/$(ls ~/media/backgrounds | wofi -i --dmenu -p 'Background') && cp $a ~/.cache/wallpaper && hyprctl hyprpaper unload ~/.cache/wallpaper && hyprctl hyprpaper preload ~/.cache/wallpaper && hyprctl hyprpaper wallpaper HDMI-A-1,~/.cache/wallpaper && hyprctl hyprpaper wallpaper eDP-1,~/.cache/wallpaper && killall waybar && wal -i $a && notify-send 'Wallpaper' 'Wallpaper and colourscheme changed' -i $a && nohup waybar > /dev/null &"
    }
    
 }
