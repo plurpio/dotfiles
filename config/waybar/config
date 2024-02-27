@@ -73,7 +73,7 @@
     "custom/wallpaper": {
         "format": "",
         "escape": true,
-        "on-click": "a=~/media/backgrounds/$(ls ~/media/backgrounds | wofi -i --dmenu -p "Background") && swww img $a && killall waybar && wal -i $a && nohup waybar > /dev/null &"
+        "on-click": "a=~/media/backgrounds/$(ls ~/media/backgrounds | wofi -i --dmenu -p 'Background') && swww img $a && killall waybar && wal -i $a && nohup waybar > /dev/null &"
    }
    
 }
