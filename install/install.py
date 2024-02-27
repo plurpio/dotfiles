@@ -109,6 +109,8 @@ for i in os.listdir("../config/"):
     os.system(cmd)
     console.log("Copied", i, "to the config directory.")
 
+os.system("chsh -s /bin/zsh")
+
 #
 # Enabling services
 #
