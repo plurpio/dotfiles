@@ -109,7 +109,7 @@
 	#
 	# If unspecified, defaults to a font-dependent value when
 	# text-cursor-style = underscore, or to 2 otherwise.
-	# text-cursor-thickness = 2
+	text-cursor-thickness = 0
 
 #
 ### Text layout
