@@ -67,3 +67,5 @@ polkit-kde-agent
 libnotify
 bluez
 bluez-utils
+cups
+cups-pdf

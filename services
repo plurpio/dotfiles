@@ -2,3 +2,4 @@ greetd.service
 libvirtd.service
 libvirtd.socket
 bluetooth.service
+cups.service
