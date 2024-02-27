@@ -1,0 +1,28 @@
+# Essentials
+org.mozilla.firefox
+org.flameshot.Flameshot
+org.pipewire.Helvum
+com.github.tchx84.Flatseal
+
+# Social
+de.shorsh.discord-screenaudio
+
+# Development
+io.github.shiftey.Desktop
+
+# Gaming
+com.valvesoftware.Steam
+org.prismlauncher.PrismLauncher
+net.brinkervii.grapejuice
+com.heroicgameslauncher.hgl
+io.itch.itch
+net.davidotek.pupgui2
+
+# Media
+com.obsproject.Studio
+org.gimp.GIMP
+org.audacityteam.Audacity
+org.kde.kdenlive
+
+io.github.celluloid_player.Celluloid
+sh.cider.Cider
