@@ -80,7 +80,7 @@ menu(True, False)
 
 for i in os.listdir("../config/"):
     if i == "zsh":
-        os.system("cp -r ../config/zsh/ $HOME/")
+        os.system("cp -r ../config/zsh/* $HOME/")
         console.log("Copied ZSH files to the home directory")
         continue
     cmd = "cp -r ../config/"+i+" $HOME/.config/"
