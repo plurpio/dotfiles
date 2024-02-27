@@ -7,10 +7,10 @@ options=$(echo $(echo -e $(wal --theme | grep -E "^[[:space:]]+-[[:space:]]" | g
 
 case $options in
   Wallpaper)
-    wal -i ~/.cache/wallpaper
+    wal -i $a
     ;;
   "")
-    wal -i ~/.cache/wallpaper
+    wal -i $a
     ;;
   *)
     wal --theme $options
