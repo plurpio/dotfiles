@@ -1,7 +1,9 @@
 <div align="center">
   <img height="200" src="https://github.com/plurpio/dotfiles/blob/34716df0516b351ed6be5bcfdcf0e78b7be3a15b/git/dotfilesBanners.png" />
 </div>
+
 ### Tools
+
 🖥️ OS - Archlinux
 🗔 WM - Hyprland
 $_ Shell - zsh
