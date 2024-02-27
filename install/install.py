@@ -49,9 +49,8 @@ if command.upper() != "Y":
 # Installation of apps.
 #
 
-os.system("sudo pacman -Syu --noconfirm")
-os.system("sudo pacman -S --needed --noconfirm flatpak")
-os.system("flatpak update -y")
+os.system("sudo pacman -Syu --noconfirm flatpak")
+os.system("sudo flatpak update -y")
 apps = open("pkgList")
 
 for i in apps:
@@ -60,14 +59,32 @@ for i in apps:
   elif "." in i:
     installApp = installApp = i.strip()
     if installApp == "": continue
-    print("Installing flatpak:", installApp)
-    cmd = "flatpak install -y "+installApp
+    console.log("Installing flatpak:", installApp)
+    cmd = "sudo flatpak install -y "+installApp
     os.system(cmd)
   else:
     installApp = installApp = i.strip()
     if installApp == "": continue
-    print("Installing pacman app:", installApp)
+    console.log("Installing pacman app:", installApp)
     cmd = "sudo pacman -S --needed --noconfirm "+installApp
+    os.system(cmd)
 
 console.clear()
 menu(True, False)
+
+#
+# Installation of dotfiles
+#
+
+for i in os.listdir("../config/"):
+    if i == "zsh":
+        os.system("cp -r ../config/zsh/ $HOME/")
+        console.log("Copied ZSH files to the home directory")
+        continue
+    cmd = "cp -r ../config/"+i+" $HOME/.config/"
+    os.system(cmd)
+    console.log("Copied", i, "to the config directory.")
+
+console.clear()
+menu(True, True)
+console.print("\n Installation complete.", style="bright_green", justify="center")
