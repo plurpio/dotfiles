@@ -103,7 +103,7 @@ def pkgInstallation():
 #
 
 def dotfileInstallation():
-    for i in os.listdir("../config/"):
+    for i in os.listdir("config/"):
         if i == "zsh":
             cmd = "ln -sf"+os.getcwd()+"/config/zsh/.zshrc ~/.zshrc"
             os.system(cmd)
