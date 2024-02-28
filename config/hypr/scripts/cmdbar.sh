@@ -24,7 +24,7 @@ option=$(echo -e "Wallpaper\n"\
 
 case $option in
   Logout)
-    prompt pkill -u nico;;
+    prompt pkill -u $USER;;
   Suspend)
     prompt systemctl suspend;;
   Restart)
