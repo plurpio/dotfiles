@@ -30,7 +30,7 @@ case $option in
   Restart)
     prompt systemctl restart;;
   Shutdown)
-    prompt systemctl shutdown;;
+    prompt systemctl poweroff;;
   Volume)
     sh $SCRIPTDIR/volume.sh;;
   Wallpaper)
