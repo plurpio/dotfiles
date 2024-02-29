@@ -28,7 +28,7 @@ case $option in
   Suspend)
     prompt systemctl suspend;;
   Restart)
-    prompt systemctl restart;;
+    prompt systemctl reboot;;
   Shutdown)
     prompt systemctl poweroff;;
   Volume)
