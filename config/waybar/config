@@ -31,18 +31,21 @@
         "format": "󰎈 {}",
         "exec": "playerctl metadata title",
         "escape": true,
+        "tooltip": false,
         "on-click": "playerctl play-pause",
         "interval": 60
     },
     "custom/statusicons": {
         "escape": true,
         "exec": "sh ~/.config/waybar/scripts/statusicons.sh",
+        "tooltip": false,
         "interval": 30
     },
     "custom/cmd": {
         "format": " >_ ",
         "escape": true,
         "on-click": "sh ~/.config/hypr/scripts/cmdbar.sh",
+        "tooltip": false,
         "interval": 3600
     }
 }

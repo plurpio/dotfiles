@@ -46,7 +46,7 @@ case $option in
   Games)
     sh $SCRIPTDIR/games.sh;;
   Lock)
-    prompt swaylock -f -e --image ~/.cache/wallpaper --grace 2 --fade-in 0.3 --indicator --ring-color 9447ca --indicator-radius 100 --indicator-thickness 25 --effect-vignette 0.7:0.7 --effect-pixelate 20;;
+    prompt hyprlock;;
    Theme)
     theme=$(/bin/ls $HOME/.config/hypr/themes | tofi --prompt "What theme do you want?") && [ -n "$theme" ] && for file in "$HOME/.config/hypr/themes"/*; do sed -i "s|$(basename "$file")|$theme|g" $HOME/.config/hypr/hyprland.conf; done && notify-send "Theme" "Theme was changed to $theme.";;
  "")
