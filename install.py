@@ -44,8 +44,8 @@ elif command.upper() != "Y": exit()
 #
 
 def pkgInstallation():
-  os.system("sudo pacman -Syu --noconfirm flatpak")
-  os.system("sudo flatpak update -y")
+  pacmanList = "" # scuffed af
+  flatpakList = ""
   apps = open("pkgList")
   
   for i in apps:
@@ -54,17 +54,18 @@ def pkgInstallation():
     elif "." in i:
       installApp = installApp = i.strip()
       if installApp == "": continue
-      print("Installing flatpak:", installApp)
-      cmd = "sudo flatpak install -y "+installApp
-      os.system(cmd)
+      flatpakList = flatpakList+" "+i.strip()
     else:
       installApp = installApp = i.strip()
       if installApp == "": continue
-      print("Installing pacman app:", installApp)
-      cmd = "sudo pacman -S --needed --noconfirm "+installApp
-      os.system(cmd)
+      pacmanList = pacmanList+" "+i.strip("\n")
 
   apps.close()
+  print("sudo pacman -Syu --noconfirm flatpak "+pacmanList)
+  os.system("sudo pacman -Syu --noconfirm flatpak "+pacmanList)
+  os.system("sudo flatpak update -y")
+  print("sudo flatpak install -y "+flatpakList)
+  os.system("sudo flatpak install -y "+flatpakList)
 
   menu(True, False, False)
 
@@ -73,17 +74,18 @@ def pkgInstallation():
 #
 
   aur = open("aur")
+  aurList = ""
   os.system("mkdir $HOME/repos/")
   os.system("cd ~/repos && git clone https://aur.archlinux.org/paru && cd paru && makepkg -si")
 
   for i in aur:
       if "#" in i: continue
       else:
-          print("Installing package", i)
-          cmd = "paru -S "+i
-          os.system(cmd)
+          print("found aur pkg", i)
+          aurList = aurList+" "+i.strip("\n")
   aur.close()
 
+  os.system("paru -S "+aurList)
   menu(True, True, False)
 
 #
