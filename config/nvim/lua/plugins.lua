@@ -45,6 +45,10 @@ require("lazy").setup({
     "rose-pine/neovim"
   },
 
+  {
+    "AlphaTechnolog/pywal.nvim",
+  },
+
 ------------
 -- EDITOR --
 ------------
