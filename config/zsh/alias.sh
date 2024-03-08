@@ -21,6 +21,8 @@ alias vi='nvim'
 alias v='nvim'
 
 alias py='python3'
+alias pyve='source venv/bin/activate'
+alias pyvec='python3 -m venv venv; source venv/bin/activate'
 alias gitlc='git log --branches --not --remotes' # Shows commits that have not been pushed
 alias pmode='sudo cpupower frequency-set -g'
 alias ytmp3='yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --embed-chapters --embed-metadata'

@@ -6,7 +6,8 @@ export XDG_PICTURES_DIR="$HOME/pics"
 export XDG_PUBLICSHARE_DIR="$HOME/media/public"
 export XDG_TEMPLATES_DIR="$HOME/docs/templates"
 export XDG_VIDEOS_DIR="$HOME/media/rec"
-export XDG_CONFIG_DIR="$HOME/.config"
+
+export XDG_CONFIG_HOME="$HOME/.config"
 
 export PATH="$HOME/.local/bin:$PATH"
 export EDITOR="nvim"
