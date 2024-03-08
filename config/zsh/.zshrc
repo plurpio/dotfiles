@@ -1,18 +1,18 @@
 
 # Sourcing
-source "$XDG_CONFIG_DIR/zsh/alias.sh"
-source "$XDG_CONFIG_DIR/zsh/flatpakAlias.sh"
-source "$XDG_CONFIG_DIR/zsh/zoxide.sh"
+source "$XDG_CONFIG_HOME/zsh/alias.sh"
+source "$XDG_CONFIG_HOME/zsh/flatpakAlias.sh"
+source "$XDG_CONFIG_HOME/zsh/zoxide.sh"
 
 # History 
-HISTFILE="$XDG_CONFIG_DIR/zsh/.history"
+HISTFILE="$XDG_CONFIG_HOME/zsh/.history"
 HISTSIZE=1000000
 SAVEHIST=1000000
 bindkey -e
 
 # Autocomplete
 autoload -U colors && colors
-zstyle :compinstall filename '$XDG_CONFIG_DIR/zsh/.zshrc'
+zstyle :compinstall filename '$XDG_CONFIG_HOME/zsh/.zshrc'
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 compinit
