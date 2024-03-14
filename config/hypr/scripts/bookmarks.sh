@@ -6,8 +6,6 @@ fi
 bookmarks=$(\cat $HOME/.cache/bookmarks.txt)
 
 
-
-
 options="$bookmarks
 Add
 Remove"
@@ -20,7 +18,7 @@ case $option in
     ;;
   Remove)
     remove=$(tofi --prompt 'Remove' <<< $bookmarks)
-    sed -i "/${remove}/d" $HOME/.cache/bookmarks.txt
+    grep -v "$remove" file > $HOME/.cache/bookmarks.txt
     ;;
   "")
     exit
