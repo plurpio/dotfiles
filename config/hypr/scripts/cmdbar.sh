@@ -10,6 +10,7 @@ SCRIPTDIR=~/.config/hypr/scripts
 
 option=$(echo -e "Wallpaper\n"\
 "Volume\n"\
+"Bookmarks\n"\
 "VMs\n"\
 "Battery\n"\
 "Update\n"\
@@ -35,6 +36,8 @@ case $option in
     sh $SCRIPTDIR/volume.sh;;
   Wallpaper)
     sh $SCRIPTDIR/wallpaper.sh;;
+  Bookmarks)
+    sh $SCRIPTDIR/bookmarks.sh;;
   VMs)
     sh $SCRIPTDIR/virt.sh;;
   Battery)
