@@ -1,45 +1,11 @@
-# Desktop
-hyprland
-waybar
-kitty
-python-pywal
-mako
-hyprpaper
-greetd-tuigreet
-xdg-desktop-portal-hyprland
-
-# Essentials
+# Core
 org.mozilla.firefox
 org.flameshot.Flameshot
 org.pipewire.Helvum
-kdeconnect
-virt-manager
-nerd-fonts
-neovim
-neofetch
-#^^^^^ this is essential to every linux users system
-
-# CLI
-tmux
-btop
-cmatrix
-bat
-lf
-wget
-unzip
-cpupower
-man-db
-ripgrep
-zoxide
-yt-dlp
 
 # Social
 dev.vencord.Vesktop
 in.cinny.Cinny
-
-# Development
-git
-github-cli
 
 # Gaming
 com.valvesoftware.Steam
@@ -54,23 +20,8 @@ com.obsproject.Studio
 org.gimp.GIMP
 org.audacityteam.Audacity
 org.kde.kdenlive
-
 org.pipewire.Helvum
-mpv
 sh.cider.Cider
 
 # System
 com.github.tchx84.Flatseal
-zsh
-zsh-syntax-highlighting
-zsh-autosuggestions
-polkit-kde-agent
-
-# Libs
-libnotify
-bluez
-bluez-utils
-cups
-cups-pdf
-brightnessctl
-jq
