@@ -59,6 +59,10 @@ require("lazy").setup({
   },
 
   {
+    'junegunn/limelight.vim',
+  },
+
+  {
   'nvim-lualine/lualine.nvim',
   requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   },

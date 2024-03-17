@@ -8,6 +8,7 @@
   "gruvbox.nvim": { "branch": "main", "commit": "6e4027ae957cddf7b193adfaec4a8f9e03b4555f" },
   "harpoon": { "branch": "master", "commit": "ccae1b9bec717ae284906b0bf83d720e59d12b91" },
   "lazy.nvim": { "branch": "main", "commit": "83493db50a434a4c5c648faf41e2ead80f96e478" },
+  "limelight.vim": { "branch": "master", "commit": "86aaec1700b27618d33d6182f44691d84d2cb6e5" },
   "lsp-zero.nvim": { "branch": "v3.x", "commit": "14c9164413df4be17a5a0ca9e01a376691cbcaef" },
   "lualine.nvim": { "branch": "master", "commit": "8b56462bfb746760465264de41b4907310f113ec" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "55716a879568a498fa236593c8119789054a3b8e" },
