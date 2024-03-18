@@ -8,6 +8,8 @@
     services.upower.enable = true; # Enable upower
     security.polkit.enable = true; # Enables policy kit
 
+   services.logind.extraConfig = ''HandlePowerKey=ignore'';
+
     services.printing.enable = true; # Enable CUPS
     services.printing.cups-pdf.enable = true; # Enable CUPS PDF
 
