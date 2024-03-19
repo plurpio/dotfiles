@@ -10,7 +10,7 @@ in
     nixpkgs.config.allowUnfree = true;
     
     environment.systemPackages = with pkgs; [
-      # Desktop
+      # Core
       neovim
       kitty
       mako 
@@ -63,6 +63,9 @@ in
       wl-clipboard
       grim
       slurp
+
+      # System
+      gparted
     ];
     programs.hyprland.enable = true; # Enable Hyprland
     programs.waybar.enable = true; # Enable waybar
