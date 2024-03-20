@@ -41,6 +41,7 @@
       kew
       distrobox
       tlrc
+      linuxKernel.packages.linux_6_8.cpupower
     
       # Development
       git
@@ -54,6 +55,7 @@
     
       # Media
       mpv
+      playerctl
     
       # Libs
       libnotify
@@ -70,7 +72,7 @@
     ];
     programs.hyprland.enable = true; # Enable Hyprland
     programs.waybar.enable = true; # Enable waybar
-    fonts.packages = [ pkgs.nerdfonts pkgs.corefonts pkgs.vistafonts ]; # Install nerd fonts
+    fonts.packages = [ pkgs.nerdfonts pkgs.corefonts pkgs.vistafonts pkgs.google-fonts ]; # Install nerd fonts
 
     services.greetd.enable = true; # Enable greetd
     services.greetd.settings.default_session.command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd Hyprland -t -r --asterisks";
