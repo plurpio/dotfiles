@@ -7,13 +7,7 @@
 {
   imports =
     [ 
-      /etc/nixos/hardware-configuration.nix # Include the results of the hardware scan.
-      ./pkgs.nix
-      ./users.nix
-      ./ssh.nix
-      ./services.nix
-      ./locale.nix
-      ./system.nix
+      ./hardware-configuration.nix # Include the results of the hardware scan.
     ];
 
   config = {

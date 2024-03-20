@@ -8,7 +8,7 @@
     services.upower.enable = true; # Enable upower
     security.polkit.enable = true; # Enables policy kit
 
-   services.logind.extraConfig = ''HandlePowerKey=ignore'';
+    services.logind.extraConfig = ''HandlePowerKey=ignore'';
 
     services.printing.enable = true; # Enable CUPS
     services.printing.cups-pdf.enable = true; # Enable CUPS PDF
@@ -24,5 +24,6 @@
     services.pipewire.alsa.enable = true; # Enables alsa support
     services.pipewire.alsa.support32Bit = true; # Enables alsa 32bit support
     services.pipewire.pulse.enable = true; # Enables pulseaudio support
+    services.pipewire.wireplumber.enable = true; # Enable wireplumber
     };
 }
