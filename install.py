@@ -8,7 +8,7 @@ import os
 #  UI CODE
 # 
 
-def menu(pkgsInstalled, aurInstalled, dotsInstalled):
+def menu(dotsInstalled):
   print("""
    ▄▄▄▄▄▄▄ ▄▄▄     ▄▄   ▄▄ ▄▄▄▄▄▄   ▄▄▄▄▄▄▄ ▄▄▄ ▄▄▄▄▄▄▄ 
   █       █   █   █  █ █  █   ▄  █ █       █   █       █
@@ -20,110 +20,27 @@ def menu(pkgsInstalled, aurInstalled, dotsInstalled):
   --- Install Script ---
   """)
 
-  if pkgsInstalled == True: pkgsInstalledUI = "[X]"
-  else: pkgsInstalledUI = "[ ]"
-
   if dotsInstalled == True: dotsInstalledUI = "[X]"
   else: dotsInstalledUI = "[ ]"
 
-  if aurInstalled == True: aurInstalledUI = "[X]"
-  else: aurInstalledUI = "[ ]"
-
-  print("\n", pkgsInstalledUI, "Installed packages")
-  print("\n", aurInstalledUI, "Installed AUR pkgs")
   print("\n", dotsInstalledUI, "Installed dotfiles")
 
 onlyDots = False
-menu(False, False, False)
-command = input("Do you want to continue? [Y/N] Type 'dots' to only install dotfiles \n> ")
-if command.upper() == "DOTS": onlyDots = True
-elif command.upper() != "Y": exit()
-
-#
-# Installation of apps.
-#
-
-def pkgInstallation():
-  pacmanList = "" # scuffed af
-  flatpakList = ""
-  apps = open("pkgList")
-  
-  for i in apps:
-    if "#" in i:
-      continue
-    elif "." in i:
-      installApp = installApp = i.strip()
-      if installApp == "": continue
-      flatpakList = flatpakList+" "+i.strip()
-    else:
-      installApp = installApp = i.strip()
-      if installApp == "": continue
-      pacmanList = pacmanList+" "+i.strip("\n")
-
-  apps.close()
-  print("sudo pacman -Syu --noconfirm flatpak "+pacmanList)
-  os.system("sudo pacman -Syu --noconfirm flatpak "+pacmanList)
-  os.system("sudo flatpak update -y")
-  print("sudo flatpak install -y "+flatpakList)
-  os.system("sudo flatpak install -y "+flatpakList)
-
-  menu(True, False, False)
-
-#
-# AUR
-#
-
-  aur = open("aur")
-  aurList = ""
-  os.system("mkdir $HOME/repos/")
-  os.system("cd ~/repos && git clone https://aur.archlinux.org/paru && cd paru && makepkg -si")
-
-  for i in aur:
-      if "#" in i: continue
-      else:
-          print("found aur pkg", i)
-          aurList = aurList+" "+i.strip("\n")
-  aur.close()
-
-  os.system("paru -S "+aurList)
-  menu(True, True, False)
+menu(False)
+command = input("Do you want to continue? [Y/N]\n> ")
+if command.upper() != "Y": exit()
 
 #
 # Installation of dotfiles
 #
 
-def dotfileInstallation():
-    for i in os.listdir("config/"):
-        if i == "home":
-            for x in os.listdir("config/home"):
-                cmd = "ln -sf "+os.getcwd()+"/config/home/"+x+" ~/"+x
-                os.system(cmd)
-                print("Symlinked "+x+" to the home directory")
-                continue
-        cmd = "ln -sf "+os.getcwd()+"/config/"+i+" ~/.config/"
-        os.system(cmd)
-        print("Symlinked", i, "to the config directory.")
-
-#
-# Enabling services
-#
-
-def serviceEnable():
-    services = open("services")
-    for i in services:
-        cmd = "sudo systemctl enable --now "+i
-        os.system(cmd)
-        print("Successfully enabled service:", i)
-
-    services.close()
-
-if onlyDots == True:
-    dotfileInstallation()
-    menu(False, False, True)
-    print("\n Installation complete.")
-else:
-    pkgInstallation()
-    dotfileInstallation()
-    serviceEnable()
-    menu(True, True, True)
-    print("\n Installation complete.")
+for i in os.listdir("config/"):
+    if i == "home":
+        for x in os.listdir("config/home"):
+            cmd = "ln -sf "+os.getcwd()+"/config/home/"+x+" ~/"+x
+            os.system(cmd)
+            print("Symlinked "+x+" to the home directory")
+            continue
+    cmd = "ln -sf "+os.getcwd()+"/config/"+i+" ~/.config/"
+    os.system(cmd)
+    print("Symlinked", i, "to the config directory.")
