@@ -112,6 +112,7 @@
         "org.filezillaproject.Filezilla"
         "com.spotify.Client"
         "org.signal.Signal"
+        "md.obsidian.Obsidian"
       ];
     };
     };
