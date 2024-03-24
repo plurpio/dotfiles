@@ -23,6 +23,7 @@
       nwg-look
       pywal
       bibata-cursors
+      cage
     
       # CLI
       neofetch # <<< core system util trust me bro
@@ -72,7 +73,7 @@
     ];
     programs.hyprland.enable = true; # Enable Hyprland
     programs.waybar.enable = true; # Enable waybar
-    fonts.packages = [ pkgs.nerdfonts pkgs.corefonts pkgs.vistafonts pkgs.google-fonts ]; # Install nerd fonts
+    fonts.packages = [ pkgs.nerdfonts pkgs.corefonts pkgs.vistafonts pkgs.google-fonts pkgs.noto-fonts pkgs.noto-fonts-extra pkgs.noto-fonts-emoji]; # Update fonts
 
     services.greetd.enable = true; # Enable greetd
     services.greetd.settings.default_session.command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd Hyprland -t -r --asterisks";
@@ -84,6 +85,10 @@
         name = "flathub";
         location = "https://flathub.org/repo/flathub.flatpakrepo";
       }];
+      update.auto = {
+        enable = true;
+        onCalendar = "weekly";
+      };
 
       packages = [
         "org.mozilla.firefox"

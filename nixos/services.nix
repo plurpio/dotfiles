@@ -18,6 +18,8 @@
     virtualisation.docker.enable = true; # Enables docker for distrobox
 
     programs.zsh.enable = true; # Enable zsh shell
+    programs.zsh.autosuggestions.enable = true; # Enable zsh autosuggestions
+    programs.zsh.syntaxHighlighting.enable = true; # Enable zsh highlighting
     users.defaultUserShell = pkgs.zsh;
 
     services.pipewire.enable = true; # Enables pipewire
@@ -25,5 +27,10 @@
     services.pipewire.alsa.support32Bit = true; # Enables alsa 32bit support
     services.pipewire.pulse.enable = true; # Enables pulseaudio support
     services.pipewire.wireplumber.enable = true; # Enable wireplumber
-    };
-}
+
+    xdg.portal.enable = true; # Enables xdg desktop portals
+    xdg.portal.wlr.enable = true;
+    xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-hyprland xdg-desktop-portal-gtk ];
+
+    hardware.opengl.enable = true;
+    }; }

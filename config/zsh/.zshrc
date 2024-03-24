@@ -17,9 +17,6 @@ autoload -Uz compinit
 zstyle ':completion:*' menu select
 compinit
 
-# Load plugins
-source "$XDG_CONFIG_HOME/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
-source "$XDG_CONFIG_HOME/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 # Prompt
 PROMPT="%F{magenta}%f%K{magenta}%F{black}  %f%k%K{magenta}%F{blue}%f%k%K{blue}%F{black}%~%f%k%F{blue}%f "
 RPROMPT="%{$fg[yellow]%}%n@%m"
