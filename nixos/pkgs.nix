@@ -10,7 +10,6 @@
     nixpkgs.config.allowUnfree = true;
 #    nixpkgs.config.permittedInsecurePackages = [ "freeimage-unstable-2021-11-01" ];
     environment.systemPackages = with pkgs; [
-      # Core
       neovim
       kitty
       mako 
@@ -18,14 +17,10 @@
 #      unstable.hyprlock
       greetd.tuigreet
       tofi
-
-      # Desktop
       nwg-look
       pywal
       bibata-cursors
       cage
-    
-      # CLI
       neofetch # <<< core system util trust me bro
       tmux
       wget
@@ -41,11 +36,10 @@
       snapper
       kew
       distrobox
+      cava
       tlrc
       linuxKernel.packages.linux_6_8.cpupower
       imagemagick
-    
-      # Development
       git
       gh
       python3
@@ -54,12 +48,8 @@
       cargo
       clang
       nodejs
-    
-      # Media
       mpv
       playerctl
-    
-      # Libs
       libnotify
       bluez
       bluez-tools
@@ -68,8 +58,6 @@
       wl-clipboard
       grim
       slurp
-
-      # System
       gparted
     ];
     programs.hyprland.enable = true; # Enable Hyprland
