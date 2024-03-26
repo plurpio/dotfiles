@@ -43,6 +43,7 @@
       distrobox
       tlrc
       linuxKernel.packages.linux_6_8.cpupower
+      imagemagick
     
       # Development
       git
@@ -74,6 +75,7 @@
     programs.hyprland.enable = true; # Enable Hyprland
     programs.waybar.enable = true; # Enable waybar
     fonts.packages = [ pkgs.nerdfonts pkgs.corefonts pkgs.vistafonts pkgs.google-fonts pkgs.noto-fonts pkgs.noto-fonts-extra pkgs.noto-fonts-emoji]; # Update fonts
+    fonts.fontDir.enable = true;
 
     services.greetd.enable = true; # Enable greetd
     services.greetd.settings.default_session.command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd Hyprland -t -r --asterisks";

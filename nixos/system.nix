@@ -16,9 +16,15 @@
     nix.gc.options = "--delete-older-than 7d";
 
     # Automatic Updates
-    system.autoUpgrade.enable = true;
+    system.autoUpgrade = {
+        enable = true;
+        flags = [ "--update-input" "nixpkgs" ];
+        dates = "02:00";
+        randomizedDelaySec = "45min";
+      };
 
     # Reduce swappiness
     boot.kernel.sysctl = { "vm.swappiness" = 10;};
+    boot.kernel.sysctl."kernel.sysrq" = 1;
   };
 }
