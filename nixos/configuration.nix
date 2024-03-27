@@ -11,6 +11,38 @@
     ];
 
   config = {
+    # Bootloader
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
+
+    # Networking
+    networking.hostName = "penguin"; # Define your hostname.
+    networking.networkmanager.enable = true; # Enable networking
+  
+    # Automatic Garbage Collection
+    nix.gc.automatic = true;
+    nix.gc.dates = "weekly";
+    nix.gc.options = "--delete-older-than 7d";
+
+    # Automatic Updates
+    system.autoUpgrade = {
+        enable = true;
+        flags = [ "--update-input" "nixpkgs" ];
+        dates = "02:00";
+        randomizedDelaySec = "45min";
+      };
+
+    # Reduce swappiness
+    boot.kernel.sysctl = { "vm.swappiness" = 10;};
+    boot.kernel.sysctl."kernel.sysrq" = 1;
+
+    # Replace sudo with doas
+    security.doas.enable = true;
+    security.doas.extraConfig = "permit persist :wheel";
+    security.sudo.enable = false;
+
+
+    # Enable nix-command and flakes
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     # This value determines the NixOS release from which the default

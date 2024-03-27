@@ -29,6 +29,7 @@ alias ytmp3='yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --
 alias yt-dlp='yt-dlp --embed-thumbnail --embed-chapters --embed-metadata'
 alias wget='wget --no-hsts'
 alias viu='kitty +icat'
+alias sudo='echo "use doas dummy :3"; doas'
 
 # Flatpak alias
 alias flatpak="rm $XDG_CONFIG_HOME/zsh/flatpakAlias.sh; python3 $XDG_CONFIG_HOME/zsh/flatpakAlias.py $XDG_CONFIG_HOME/zsh/flatpakAlias.sh; source $XDG_CONFIG_HOME/zsh/flatpakAlias.sh; flatpak $@" # ik this wont do it for new app but its 2am and it wasn't working

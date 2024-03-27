@@ -18,7 +18,6 @@
         ./ssh.nix
         ./services.nix
         ./locale.nix
-        ./system.nix
       ];
     };
   };
