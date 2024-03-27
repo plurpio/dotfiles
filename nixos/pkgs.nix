@@ -1,20 +1,16 @@
 { config, pkgs, lib, ... }:
 
-#let unstableTarball = fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz"; # Enables unstable channel
-#in
 {
   config = {
-#    nixpkgs.config = { packageOverrides = pkgs: { unstable = import unstableTarball { config = config.nixpkgs.config; }; }; }; # Enables unstable channel
-
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
-#    nixpkgs.config.permittedInsecurePackages = [ "freeimage-unstable-2021-11-01" ];
+    nixpkgs.config.permittedInsecurePackages = [ "freeimage-unstable-2021-11-01" ];
     environment.systemPackages = with pkgs; [
       neovim
       kitty
       mako 
       hyprpaper
-#      unstable.hyprlock
+      hyprlock
       greetd.tuigreet
       tofi
       nwg-look

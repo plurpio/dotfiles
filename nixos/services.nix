@@ -11,7 +11,7 @@
     services.logind.extraConfig = ''HandlePowerKey=ignore'';
 
     services.printing.enable = true; # Enable CUPS
-    services.printing.cups-pdf.enable = true; # Enable CUPS PDF
+    services.printing.drivers = [ pkgs.gutenprint pkgs.gutenprintBin pkgs.cnijfilter2]; # Adds printer support
 
     programs.virt-manager.enable = true; # Enable virt-manager
     virtualisation.waydroid.enable = true; # Enable waydroid
@@ -33,4 +33,5 @@
     xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-hyprland xdg-desktop-portal-gtk ];
 
     hardware.opengl.enable = true;
+
     }; }

@@ -2,12 +2,12 @@
   description = "Plurpio's NixOS configuration flake.";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
-    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+#    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.3.0";
   };
 
-  outputs = { self, nixpkgs, nix-flatpak, unstable, ... }@inputs: {
+  outputs = { self, nixpkgs, nix-flatpak, ... }@inputs: {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
