@@ -21,5 +21,6 @@ cd dotfiles/nixos/
 sudo sh build.sh
 mkdir ~/.config
 mkdir ~/.config/ametrine
-ln -s ../config.yaml ~/.config/ametrine/config.yaml
+cd ..
+ln -s $PWD/config.yaml ~/.config/ametrine/config.yaml
 ametrine change default`
