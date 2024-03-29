@@ -2,13 +2,12 @@
 
 {
   config = {
+    services.onedrive.enable = true; # enable onedrive (after i nuked $home)
     programs.kdeconnect.enable = true; # Enable kdeconnect
     documentation.man.enable = true; # Enable more man pages
     services.cpupower-gui.enable = true; # Enable CPU power gui
     services.upower.enable = true; # Enable upower
     security.polkit.enable = true; # Enables policy kit
-
-    services.logind.extraConfig = ''HandlePowerKey=ignore'';
 
     services.printing.enable = true; # Enable CUPS
     services.printing.drivers = [ pkgs.gutenprint pkgs.gutenprintBin pkgs.cnijfilter2]; # Adds printer support

@@ -7,6 +7,7 @@
     nixpkgs.config.permittedInsecurePackages = [ "freeimage-unstable-2021-11-01" ];
     environment.systemPackages = with pkgs; [
       neovim
+      spotify
       kitty
       mako 
       hyprpaper
@@ -38,6 +39,7 @@
       imagemagick
       git
       gh
+      act
       python3
       python3Packages.virtualenv
       python3Packages.pip
@@ -96,9 +98,9 @@
         "sh.cider.Cider"
         "com.github.tchx84.Flatseal"
         "org.filezillaproject.Filezilla"
-        "com.spotify.Client"
         "org.signal.Signal"
         "md.obsidian.Obsidian"
+        "org.keepassxc.KeePassXC"
       ];
     };
     };

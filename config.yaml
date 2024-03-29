@@ -1,0 +1,30 @@
+---
+# Ametrine Configuration
+# Main Configuration
+#
+
+# The location of where your themes are
+# stored. Supports use of ~ to act as home.
+themepath: "~/repos/dotfiles/config"
+
+# Dangerous! Enable overwriting of real files
+# with symlinks. (only replaces symlinks if false)
+overwritefiles: False
+
+# The theme which is applied before applying the new
+# theme. Useful if you want to keep things like keybinds
+# consistent.
+basetheme: "default"
+
+# Commands run before changing the theme, these
+# are the default. Themes can also choose to 
+# define their own.
+precmds: 
+   - killall .waybar-wrapped # Restart waybar with new theme
+
+
+# Commands run after changing the theme, these
+# are the default. Themes can also choose to 
+# define their own.
+aftercmds: 
+    - waybar & # Start up waybar with new theme
