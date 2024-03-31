@@ -101,6 +101,7 @@
         "org.signal.Signal"
         "md.obsidian.Obsidian"
         "org.keepassxc.KeePassXC"
+        "org.upscayl.Upscayl"
       ];
     };
     };

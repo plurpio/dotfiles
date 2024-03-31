@@ -31,7 +31,7 @@ esac
 # After pywal stuff
 cp ~/.cache/wal/colors-tofi ~/.config/tofi/colors-tofi
 
-killall waybar
+killall .waybar-wrapped
 nohup waybar > /dev/null &
 
 hyprctl hyprpaper unload ~/.cache/wallpaper

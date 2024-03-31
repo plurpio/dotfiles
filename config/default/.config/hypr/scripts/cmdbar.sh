@@ -42,6 +42,8 @@ case $option in
     sh $SCRIPTDIR/virt.sh;;
   Battery)
     sh $SCRIPTDIR/battery.sh;;
+  Theme)
+    ametrine change $(ametrine theme ls | tofi --prompt "Theme");;
   Update)
     kitty -e sh $SCRIPTDIR/update.sh;;
   Brightness)
@@ -50,8 +52,6 @@ case $option in
     sh $SCRIPTDIR/games.sh;;
   Lock)
     prompt hyprlock;;
-   Theme)
-    theme=$(/bin/ls $HOME/.config/hypr/themes | tofi --prompt "What theme do you want?") && [ -n "$theme" ] && for file in "$HOME/.config/hypr/themes"/*; do sed -i "s|$(basename "$file")|$theme|g" $HOME/.config/hypr/hyprland.conf; done && notify-send "Theme" "Theme was changed to $theme.";;
  "")
     exit;;
 esac
