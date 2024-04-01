@@ -16,7 +16,7 @@ case $options in
     ;;
   *)
     wal --theme $options
-    case $(echo -e "Yes\nNo" | tofi --prompt "Do you want to tint the wallpaper?") in
+    case $(echo -e "Yes\nNo" | tofi --prompt "Tint wallpaper?") in
       Yes)
         magick $a -fill "$(cat $HOME/.cache/wal/colors.json | jq '.colors.color14' | sed s/\"//g)" -tint 100 $HOME/.cache/wallpaper
         ;;
@@ -41,4 +41,14 @@ sleep 0.1 # Hyprpaper gets stuck on this
 hyprctl hyprpaper wallpaper HDMI-A-1,~/.cache/wallpaper
 hyprctl hyprpaper wallpaper eDP-1,~/.cache/wallpaper
 
+cp $HOME/.config/mako/config.default $HOME/.config/mako/config
+. "${HOME}/.cache/wal/colors.sh"
+declare -A colors
+colors=(
+    ["background-color"]="${background}"
+    ["text-color"]="$foreground"
+)
+for color_name in "${!colors[@]}"; do
+  sed -i "0,/^$color_name.*/{s//$color_name=${colors[$color_name]}/}" $HOME/.config/mako/config; done
+makoctl reload
 notify-send 'Wallpaper' 'Wallpaper has been changed' -i ~/.cache/wallpaper

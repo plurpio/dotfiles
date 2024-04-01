@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "height": 35, 
-    "margin-top": 8,
+    "margin-top": 5,
     "margin-left": 250,
     "margin-right": 250,
     // "width": 1280,
@@ -45,7 +45,7 @@
         "escape": true,
         "tooltip": false,
         "on-click": "playerctl play-pause",
-        "interval": 60
+        "interval": 10
     },
     "custom/statusicons": {
         "escape": true,

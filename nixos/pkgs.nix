@@ -7,14 +7,14 @@
     nixpkgs.config.permittedInsecurePackages = [ "freeimage-unstable-2021-11-01" ];
     environment.systemPackages = with pkgs; [
       neovim
-      spotify
       kitty
-      mako 
+      mako
       hyprpaper
       hyprlock
       greetd.tuigreet
       tofi
       nwg-look
+      spotify
       pywal
       bibata-cursors
       cage
@@ -28,6 +28,8 @@
       lf
       unzip
       ripgrep
+      grim
+      slurp
       zoxide
       yt-dlp
       snapper
@@ -39,6 +41,7 @@
       imagemagick
       git
       gh
+      ffmpeg
       act
       python3
       python3Packages.virtualenv
@@ -54,8 +57,6 @@
       brightnessctl
       jq
       wl-clipboard
-      grim
-      slurp
       gparted
     ];
     programs.hyprland.enable = true; # Enable Hyprland
@@ -80,7 +81,6 @@
 
       packages = [
         "org.mozilla.firefox"
-        "org.flameshot.Flameshot"
         "org.pipewire.Helvum"
         "dev.vencord.Vesktop"
         "in.cinny.Cinny"
