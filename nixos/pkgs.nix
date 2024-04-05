@@ -7,10 +7,13 @@
     nixpkgs.config.permittedInsecurePackages = [ "freeimage-unstable-2021-11-01" ];
     environment.systemPackages = with pkgs; [
       neovim
+      uwufetch
       kitty
       mako
       hyprpaper
       hyprlock
+      file
+      intel-media-driver
       greetd.tuigreet
       tofi
       nwg-look
@@ -30,6 +33,7 @@
       ripgrep
       grim
       slurp
+      go
       zoxide
       yt-dlp
       snapper
