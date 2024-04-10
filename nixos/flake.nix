@@ -14,11 +14,4 @@
         nix-flatpak.nixosModules.nix-flatpak
         ./configuration.nix
         ./pkgs.nix
-        ./users.nix
-        ./ssh.nix
-        ./services.nix
-        ./locale.nix
-      ];
-    };
-  };
-}
+]; }; }; }

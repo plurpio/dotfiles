@@ -44,6 +44,6 @@ require('dashboard').setup ({
     project = { enable = false, limit = 0, action = 'Telescope find_files cwd=' },
     mru = { limit = 7, cwd_only = false },
 
-    footer = {" i did not kill that emacs user"},
+    footer = {" richard stallman being devil preaching stuff like \"emacs\""},
     },
   })

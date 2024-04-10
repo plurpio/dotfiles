@@ -2,12 +2,10 @@
 
 {
   config = {
-    # Allow unfree packages
-    nixpkgs.config.allowUnfree = true;
     nixpkgs.config.permittedInsecurePackages = [ "freeimage-unstable-2021-11-01" ];
+
     environment.systemPackages = with pkgs; [
       neovim
-      uwufetch
       kitty
       mako
       hyprpaper
@@ -21,7 +19,8 @@
       pywal
       bibata-cursors
       cage
-      neofetch # <<< core system util trust me bro
+      uwufetch # true linux user program
+      neofetch # less cool but still linux user program
       tmux
       wget
       btop
@@ -63,27 +62,8 @@
       wl-clipboard
       gparted
     ];
-    programs.hyprland.enable = true; # Enable Hyprland
-    programs.waybar.enable = true; # Enable waybar
-    fonts.packages = [ pkgs.nerdfonts pkgs.corefonts pkgs.vistafonts pkgs.google-fonts pkgs.noto-fonts pkgs.noto-fonts-extra pkgs.noto-fonts-emoji]; # Update fonts
-    fonts.fontDir.enable = true;
 
-    services.greetd.enable = true; # Enable greetd
-    services.greetd.settings.default_session.command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd Hyprland -t -r --asterisks";
-
-    services.flatpak = {
-      enable = true;
-      uninstallUnmanagedPackages = true;
-      remotes = lib.mkOptionDefault [{
-        name = "flathub";
-        location = "https://flathub.org/repo/flathub.flatpakrepo";
-      }];
-      update.auto = {
-        enable = true;
-        onCalendar = "weekly";
-      };
-
-      packages = [
+    services.flatpak.packages = [
         "org.mozilla.firefox"
         "org.pipewire.Helvum"
         "dev.vencord.Vesktop"
@@ -91,7 +71,6 @@
         "com.valvesoftware.Steam"
         "net.davidotek.pupgui2"
         "org.prismlauncher.PrismLauncher"
-        "net.brinkervii.grapejuice"
         "com.heroicgameslauncher.hgl"
         "io.itch.itch"
         "com.obsproject.Studio"
@@ -107,6 +86,5 @@
         "org.keepassxc.KeePassXC"
         "org.upscayl.Upscayl"
       ];
-    };
     };
 }
