@@ -1,10 +1,17 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
-  imports = [  ./hardware-configuration.nix ];
+  imports = [ ./hardware-configuration.nix ];
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users.nico = import ./hm.nix;
+  };
 
   # Enable desktop programs
   programs.hyprland.enable = true;
+  programs.hyprland.package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  programs.firefox.enable = true;
   programs.waybar.enable = true;
   programs.kdeconnect.enable = true;
 
@@ -15,7 +22,34 @@
   programs.zsh.enable = true;
   programs.zsh.autosuggestions.enable = true;
   programs.zsh.syntaxHighlighting.enable = true;
+  programs.zsh.histFile = "$HOME/.cache/zsh_history";
+  programs.zsh.histSize = 1000000;
   users.defaultUserShell = pkgs.zsh;
+  environment.shellAliases = {
+    ls="ls -ah --color=auto";
+    ll="ls -lah --color=auto";
+    cat="bat";
+    ".."="cd ..";
+    "cd.."="cd ..";
+    "~"="cd ~";
+    rm="rm -rf";
+    cls="clear";
+    quit="exit";
+    vim="nvim";
+    vi="nvim";
+    v="nvim";
+    py="python3";
+    pyve="source venv/bin/activate";
+    pyvec="python3 -m venv venv; source venv/bin/activate";
+    gitlc="git log --branches --not --remotes"; # Shows commits that have not been pushed
+    pmode="sudo cpupower frequency-set -g";
+    ytmp3="yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --embed-chapters --embed-metadata";
+    yt-dlp="yt-dlp --embed-thumbnail --embed-chapters --embed-metadata";
+    wget="wget --no-hsts";
+    viu="kitty +icat";
+    sudo="echo \"use doas dummy :3\"; doas";
+    virsh="virsh --connect=qemu:///system";
+  };
 
   # Enables desktop portals and polkit
   xdg.portal.enable = true;
@@ -24,14 +58,14 @@
   security.polkit.enable = true;
 
   systemd = {
-    user.services.polkit-gnome-authentication-agent-1 = {
+    user.services.polkit-kde-authentication-agent-1 = {
     description = "polkit-gnome-authentication-agent-1";
     wantedBy = [ "graphical-session.target" ];
     wants = [ "graphical-session.target" ];
     after = [ "graphical-session.target" ];
     serviceConfig = {
       Type = "simple";
-      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      ExecStart = "${pkgs.libsForQt5.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1";
       Restart = "on-failure";
       RestartSec = 1;
       TimeoutStopSec = 10;
@@ -54,6 +88,13 @@
 
   # Enable virtualisation
   programs.virt-manager.enable = true;
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
+  virtualisation.libvirtd.qemu.ovmf.packages = [ pkgs.OVMFFull.fd ];
+  virtualisation.libvirtd.qemu.swtpm.enable = true;
+
+  virtualisation.vmware.host.enable = true; # virt-manager doesnt work rn
+
   virtualisation.waydroid.enable = true;
   virtualisation.docker.enable = true;
 
@@ -100,7 +141,7 @@
   # Package manager settings
   #
 
-  # Nix pkg configuration
+  # Nix pkg manager configuration
   nixpkgs.config.allowUnfree = true;
 
   # Flatpak configuration (with nix-flatpak)
@@ -154,7 +195,7 @@
 
   # Replace sudo with doas
   security.doas.enable = true;
-  security.doas.extraConfig = "permit persist :wheel";
+  security.doas.extraConfig = "permit keepenv persist :wheel";
   security.sudo.enable = false;
 
   # Enable nix-command and flakes

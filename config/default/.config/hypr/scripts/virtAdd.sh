@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 
 read -p "Name of virtual machine: " name
 read -p "Number of virtual cpus: " vcpus

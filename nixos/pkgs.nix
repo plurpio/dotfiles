@@ -16,6 +16,7 @@
       tofi
       nwg-look
       spotify
+      speedtest-cli
       pywal
       bibata-cursors
       cage
@@ -55,8 +56,6 @@
       mpv
       playerctl
       libnotify
-      bluez
-      bluez-tools
       brightnessctl
       jq
       wl-clipboard
@@ -85,6 +84,7 @@
         "md.obsidian.Obsidian"
         "org.keepassxc.KeePassXC"
         "org.upscayl.Upscayl"
+        "com.transmissionbt.Transmission"
       ];
     };
 }
