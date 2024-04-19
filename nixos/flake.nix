@@ -18,4 +18,7 @@
         home-manager.nixosModules.home-manager
         ./configuration.nix
         ./pkgs.nix
+        ./shell.nix
+        ./desktop.nix
+        ./users.nix
 ]; }; }; }

@@ -26,7 +26,7 @@ vim.keymap.set("n", "<leader>F", "<cmd>Telescope live_grep <CR>") -- Search in f
 vim.keymap.set("n", "<leader>t", "<cmd>Telescope colorscheme <CR>") -- Change colorscheme
 
 -- NvimTree
-vim.keymap.set("n", "<leader>d", "<cmd>Oil --float<CR>") -- Opens dir tree
+vim.keymap.set("n", "<leader>d", "<cmd>Oil<CR>") -- Opens dir tree
 
 vim.keymap.set("v", "p", "pgvy") --  Gets back clipboard after pasting
 

@@ -15,6 +15,7 @@ option=$(echo -e "Wallpaper\n"\
 "Bookmarks\n"\
 "VMs\n"\
 "Battery\n"\
+"PWAify\n"\
 "Update\n"\
 "Games\n"\
 "Brightness\n"\
@@ -42,6 +43,8 @@ case $option in
     sh $SCRIPTDIR/bookmarks.sh;;
   VMs)
     sh $SCRIPTDIR/virt.sh;;
+  PWAify)
+    chromium --app=https://$(echo "" | tofi --prompt "website" --require-match=False);;
   Battery)
     sh $SCRIPTDIR/battery.sh;;
   Polkit)
