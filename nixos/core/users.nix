@@ -9,7 +9,9 @@
   isNormalUser = true;
   description = "nico";
   extraGroups = ["networkmanager" "wheel" "docker" "libvirtd" "flatpak" "disk"
-                 "qemu" "kvm" "sshd" "networkmanager" "audio" "video" "root"];};
+                 "qemu" "kvm" "sshd" "networkmanager" "audio" "video"];};
+
+  nix.settings.trusted-users = [ "root" "@wheel" ];
 
   # Fonts
   fonts.fontDir.enable = true;
@@ -42,10 +44,6 @@
   home-manager.users.nico = {
     home.username = "nico";
     home.homeDirectory = "/home/nico";
-
-    # Git username & email
-    programs.git.userName = "Plurpio";
-    programs.git.userEmail = "148961679+plurpio@users.noreply.github.com";
 
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage

@@ -21,33 +21,13 @@ require("lazy").setup({
 -- THEMES --
 ------------
 
-  {
-	  "catppuccin/nvim"
-  },
-
-  {
-	  "Mofiqul/vscode.nvim"
-  },
-
-  {
-	  "shaunsingh/nord.nvim"
-  },
-
-  {
-    "ellisonleao/gruvbox.nvim"
-  },
-
-  {
-    "folke/tokyonight.nvim"
-  },
-
-  {
-    "rose-pine/neovim"
-  },
-
-  {
-    "AlphaTechnolog/pywal.nvim",
-  },
+  { "catppuccin/nvim" },
+  { "Mofiqul/vscode.nvim" },
+  { "shaunsingh/nord.nvim" },
+  { "ellisonleao/gruvbox.nvim" },
+  { "folke/tokyonight.nvim" },
+  { "rose-pine/neovim" },
+  { "AlphaTechnolog/pywal.nvim", },
 
 ------------
 -- EDITOR --
@@ -101,13 +81,24 @@ require("lazy").setup({
 ------------------------
 -- LSP & CODE EDITING --
 ------------------------
-  {
-	  'williamboman/mason.nvim'
-  },
 
-  {
-	  'williamboman/mason-lspconfig.nvim'
-  },
+  { 'williamboman/mason.nvim' },
+
+  { 'williamboman/mason-lspconfig.nvim' },
+
+  { 'neovim/nvim-lspconfig' },
+
+  { 'hrsh7th/cmp-nvim-lsp' },
+
+  { 'hrsh7th/nvim-cmp' },
+
+  { 'L3MON4D3/LuaSnip' },
+
+  { 'rafamadriz/friendly-snippets' },
+
+  { "theprimeagen/harpoon" },
+
+  { "lewis6991/gitsigns.nvim", },
 
   {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -115,36 +106,8 @@ require("lazy").setup({
   },
 
   {
-	  'neovim/nvim-lspconfig'
-  },
-
-  {
-	  'hrsh7th/cmp-nvim-lsp'
-  },
-
-  {
-	  'hrsh7th/nvim-cmp'
-  },
-
-  {
     'stevearc/conform.nvim',
     opts = {},
-  },
-
-  {
-	  'L3MON4D3/LuaSnip'
-  },
-
-  {
-    'rafamadriz/friendly-snippets'
-  },
-
-  {
-	  "theprimeagen/harpoon"
-  },
-
-  {
-	  "lewis6991/gitsigns.nvim",
   },
 
   {

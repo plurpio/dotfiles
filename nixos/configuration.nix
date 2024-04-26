@@ -1,30 +1,37 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [ /etc/nixos/hardware-configuration.nix ];
 
   # Enable onedrive
   services.onedrive.enable = true;
 
-  # Enable printing
-  services.printing.enable = true;
-  services.printing.drivers = [ pkgs.gutenprint pkgs.gutenprintBin pkgs.cnijfilter2]; # Enable virtualisation
-  programs.virt-manager.enable = true;
-  virtualisation.libvirtd.enable = true;
-  virtualisation.spiceUSBRedirection.enable = true;
-  virtualisation.libvirtd.qemu.ovmf.packages = [ pkgs.OVMFFull.fd ];
-  virtualisation.libvirtd.qemu.swtpm.enable = true;
-  virtualisation.vmware.host.enable = true; # virt-manager doesnt work rn
+  #
+  # pkg managers
+  #
 
-  virtualisation.waydroid.enable = true;
-  virtualisation.docker.enable = true;
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [ "freeimage-unstable-2021-11-01" ];
 
-  # Miscellaneous
-  documentation.man.enable = true;
+  # Flatpak configuration (with nix-flatpak)
+  services.flatpak = {
+    enable = true;
+    uninstallUnmanagedPackages = false;
+    update.auto.enable = true;
+    update.auto.onCalendar = "weekly";
+
+    remotes = lib.mkOptionDefault [{
+      name = "flathub";
+      location = "https://flathub.org/repo/flathub.flatpakrepo";
+    }];
+  };
 
   #
   # System Settings
   # 
+
+  # NEEDED TO REBUILD WITH GIT FLAKE
+  environment.systemPackages = with pkgs; [ git ];
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -72,7 +79,7 @@
     };
 
   # Kernel options
-  boot.kernel.sysctl = { "vm.swappiness" = 10;};
+  boot.kernel.sysctl."vm.swappiness" = 10;
   boot.kernel.sysctl."kernel.sysrq" = 1;
 
   # Replace sudo with doas

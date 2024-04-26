@@ -10,7 +10,6 @@ SCRIPTDIR=~/.config/hypr/scripts
 
 option=$(echo -e "Wallpaper\n"\
 "Run\n"\
-"Polkit\n"\
 "Volume\n"\
 "Bookmarks\n"\
 "VMs\n"\
@@ -47,8 +46,6 @@ case $option in
     chromium --app=https://$(echo "" | tofi --prompt "website" --require-match=False);;
   Battery)
     sh $SCRIPTDIR/battery.sh;;
-  Polkit)
-    prompt systemctl start --user polkit-kde-authentication-agent-1; notify-send "started polkit" "restarting waybar to fix issue"; killall .waybar-wrapped; waybar &;;
   Run)
     A=$(echo "" | tofi --prompt "Run" --require-match=False); B="$($A 2>&1)" || notify-send "command failed" "$B";;
   Theme)

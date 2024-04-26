@@ -12,15 +12,5 @@ $_ Shell - zsh <br />
 🌏 Browser - Firefox  
 
 ### Installation
-Execute the following commands to install my dotfiles on a NixOS installation. You will need to have **git** installed. <br />
 
-`mkdir ~/repos
-cd ~/repos
-git clone https://github.com/plurpio/dotfiles
-cd dotfiles/nixos/
-sudo sh build.sh
-mkdir ~/.config
-mkdir ~/.config/ametrine
-cd ..
-ln -s $PWD/config.yaml ~/.config/ametrine/config.yaml
-ametrine change default`
+yea  idk go figure it out yourself ive given up on giving instructions. its nixos you should be able to figure it out.
