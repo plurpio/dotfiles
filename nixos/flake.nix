@@ -43,31 +43,10 @@
         nix-flatpak.nixosModules.nix-flatpak
         home-manager.nixosModules.home-manager
         ./configuration.nix
-        ./core/shell.nix
-        ./core/users.nix
+        ./core/zsh.nix
 
-        ./desktop/apps.nix
         ./desktop/desktop.nix
         ./desktop/development.nix
-        ./desktop/media.nix
-        ./desktop/pwa.nix
-      ];
-    };
-
-  #
-  # eudyptula ( minimal )
-  #
-
-    nixosConfigurations.eudyptula = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        nix-flatpak.nixosModules.nix-flatpak
-        home-manager.nixosModules.home-manager
-        ./configuration.nix
-        ./core/shell.nix
-        ./core/users.nix
-
-        ./desktop/desktop.nix
       ];
     };
   };

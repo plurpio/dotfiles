@@ -34,17 +34,12 @@ require("lazy").setup({
 ------------
 
   {
-    'nvimdev/dashboard-nvim',
-    dependencies = { "nvim-tree/nvim-web-devicons" }
-  },
-
-  {
     'junegunn/limelight.vim',
   },
 
   {
-  'nvim-lualine/lualine.nvim',
-  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   },
 
   {

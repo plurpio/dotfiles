@@ -130,7 +130,7 @@
 	# Spacing between results in pixels. Can be negative.
 	result-spacing = 20
 	# List results horizontally.
-	horizontal = true
+	horizontal = false
 
 	# Minimum width of input in horizontal mode.
 	min-input-width = 175
@@ -139,8 +139,8 @@
 ### Window theming
 #
 	# Width and height of the window. Can be pixels or a percentage.
-	width = 100%
-	height = 35
+	width = 50%
+	height = 50%
 
 	# Window background color
 
@@ -154,10 +154,10 @@
 	corner-radius = 0
 
 	# Padding between borders and text. Can be pixels or a percentage.
-	padding-top = 0
-	padding-bottom = 0
-	padding-left = 0
-	padding-right = 0
+	padding-top = 3
+	padding-bottom = 3
+	padding-left = 3
+	padding-right = 3
 
 	# Whether to clip text drawing to be within the specified padding. This
 	# is mostly important for allowing text to be inset from the border,
@@ -178,7 +178,7 @@
 	#
 	# Supported values: top-left, top, top-right, right, bottom-right,
 	# bottom, bottom-left, left, center.
-	anchor = top
+	anchor = center
 
 	# Set the size of the exclusive zone.
 	#
@@ -188,7 +188,7 @@
 	#
 	# Values greater than 0 are only meaningful when tofi is anchored to a
 	# single edge.
-	exclusive-zone = -1
+	exclusive-zone = 0
 
 	# Window offset from edge of screen. Only has an effect when anchored
 	# to the relevant edge. Can be pixels or a percentage.

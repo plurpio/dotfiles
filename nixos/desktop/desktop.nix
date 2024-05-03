@@ -10,12 +10,18 @@
 
   programs.waybar.enable = true;
   programs.kdeconnect.enable = true;
+  services.onedrive.enable = true;
 
-  # Enables desktop portals and polkit
+  # Desktop Portals and Polkit
   xdg.portal.enable = true;
   xdg.portal.wlr.enable = true;
   xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
   security.polkit.enable = true;
+
+  # Fonts
+  fonts.fontDir.enable = true;
+  fonts.packages = [ pkgs.nerdfonts pkgs.corefonts pkgs.vistafonts
+                     pkgs.google-fonts pkgs.noto-fonts pkgs.noto-fonts-emoji];
 
   # Core Desktop Applications
   environment.systemPackages = with pkgs; [
@@ -31,14 +37,40 @@
     wl-clipboard
     playerctl
     libnotify
-    cava
     keepassxc
     imagemagick
+
+    # extra
+    gparted
+    efibootmgr
+
+    vlc
+    obs-studio
+    helvum
+    spotify
+
   ];
 
   services.flatpak.packages = [ 
     "com.github.tchx84.Flatseal"
+    "org.filezillaproject.Filezilla"
+    "com.transmissionbt.Transmission"
+
     "org.mozilla.firefox" 
+
+    "org.kde.kdenlive"
+    "org.kde.krita"
+    "org.audacityteam.Audacity"
+    "org.upscayl.Upscayl"
+    "org.gimp.GIMP"
+
+    "md.obsidian.Obsidian"
+
+    "com.valvesoftware.Steam"
+    "net.davidotek.pupgui2"
+    "org.prismlauncher.PrismLauncher"
+    "com.heroicgameslauncher.hgl"
+    "io.itch.itch"
   ];
 
   # Enable login manager
@@ -66,7 +98,7 @@
 
     qt = {
       enable = true;
-      style.name = "Tokyonight-Dark-B";
+      style.name = "gtk";
       platformTheme.name = "gtk";
     };
   };
@@ -101,8 +133,9 @@
     "mnjggcdmjocbbbhaepdhchncahnbgone" # sponsorblock
     "gebbhagfogifgggkldgodflihgfeippi" # return youtube dislike
     "hipekcciheckooncpjeljhnekcoolahp" # tabliss
-    "cbghhgpcnddeihccjmnadmkaejncjndb" # vesktop
+    "cbghhgpcnddeihccjmnadmkaejncjndb" # vencord
     "oboonakemofpalcgghocfoadofidjkkk" # keepass
+    "dbepggeogbaibhgnhhndojpepiihcmeb" # vimium
   ];
 
   programs.chromium.extraOpts = {
@@ -118,6 +151,50 @@
   };
 
   #
+  # Progressive Web Apps ( PWAs )
+  #
+
+
+  home-manager.users.nico.xdg.desktopEntries =  {
+    discord = {
+      name = "Discord";
+      genericName = "Discord";
+      exec = "chromium --app=https://discord.com/app";
+      terminal = false;
+      categories = [ "Network" "X-Social" ];
+      mimeType = [ "text/html" "text/xml" ];
+    };
+
+    whatsapp = {
+      name = "Whatsapp";
+      genericName = "Messages";
+      exec = "chromium --app=https://web.whatsapp.com/";
+      terminal = false;
+      categories = [ "Network" "X-Social" ];
+      mimeType = [ "text/html" "text/xml" ];
+    };
+
+    onedrive = {
+      name = "Onedrive";
+      genericName = "Storage";
+      exec = "chromium --app=https://onedrive.live.com";
+      terminal = false;
+      categories = [ "Network" "X-Storage" ];
+      mimeType = [ "text/html" "text/xml" ];
+    };
+
+    gmessages = {
+      name = "Google Messages";
+      genericName = "Phone Messages";
+      exec = "chromium --app=https://messages.google.com";
+      terminal = false;
+      categories = [ "Network" "X-Messages" ];
+      mimeType = [ "text/html" "text/xml" ];
+    };
+  };
+
+
+  #
   # Virtualisation
   #
 
@@ -129,6 +206,18 @@
     libvirtd.qemu.ovmf.packages = [ pkgs.OVMFFull.fd ];
     libvirtd.qemu.swtpm.enable = true;
   };
+
+  #
+  # Enable weylus ( use ipad as drawing tablet )
+  #
+
+  programs.weylus = {
+    enable = true;
+    users = [ "nico" ];
+    openFirewall = true;
+  };
+
+  users.users.nico.extraGroups = [ "uinput" ];
 
   #
   # Enable pipewire/audio

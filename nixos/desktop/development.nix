@@ -7,19 +7,20 @@
     cargo
     clang
     nodejs
+    gnumake
+    github-cli
 
     python3
     python3Packages.virtualenv
     python3Packages.pip
   ];
 
-  home-manager.users.nico.programs = {
-    git.enable = true;
-    git.userName = "Plurpio";
-    git.userEmail = "148961679+plurpio@users.noreply.github.com";
-
-    gh.enable = true;
-    gh.settings.git_protocol = "https";
+  home-manager.users.nico.programs.gpg = {
+    enable = true;
+    mutableKeys = true;
+    settings = {
+      pinentry-mode = "loopback";
+    };
   };
 
   environment.shellAliases = {

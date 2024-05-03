@@ -1,8 +1,9 @@
 {
     "layer": "bottom",
     "position": "top",
+    "mode": "overlay",
     "height": 35, 
-    "margin-top": 7,
+    "margin-top": 10,
     "margin-left": 250,
     "margin-right": 250,
     // "width": 1280,
