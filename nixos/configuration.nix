@@ -4,7 +4,7 @@
   imports = [ /etc/nixos/hardware-configuration.nix ];
 
   #
-  # User settings
+  # users
   #
 
   users.users.nico = {
@@ -14,8 +14,6 @@
     extraGroups = ["networkmanager" "wheel" "docker" "libvirtd" "flatpak" "disk"
                   "qemu" "kvm" "sshd" "networkmanager" "audio" "video"];
   };
-
-  nix.settings.trusted-users = [ "root" "@wheel" ];
 
   home-manager.users.nico = {
     home.username = "nico";
@@ -34,10 +32,9 @@
   };
 
   #
-  # pkg managers
+  # package managers
   #
 
-  nixpkgs.config.allowUnfree = true;
 
   # Flatpak configuration (with nix-flatpak)
   services.flatpak = {
@@ -53,11 +50,23 @@
   };
 
   #
-  # System Settings
+  # system settings
   # 
 
-  # NEEDED TO REBUILD WITH GIT FLAKE
-  environment.systemPackages = with pkgs; [ git ];
+
+  # Packages
+  nixpkgs.config.allowUnfree = true;
+  nix.settings.trusted-users = [ "root" "@wheel" ];
+  environment.systemPackages = with pkgs; [ zoxide tlrc wget unzip killall jq eza bat git file neovim # needed
+                                            yt-dlp ffmpeg uwufetch fastfetch btop cava ripgrep ];
+
+  # Shell
+  programs.zsh.enable = true;
+  programs.zsh.autosuggestions.enable = true;
+  programs.zsh.syntaxHighlighting.enable = true;
+
+  # Documentation
+  documentation.man.enable = true;
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;

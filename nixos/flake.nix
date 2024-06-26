@@ -43,8 +43,6 @@
         nix-flatpak.nixosModules.nix-flatpak
         home-manager.nixosModules.home-manager
         ./configuration.nix
-        ./core/zsh.nix
-
         ./desktop/desktop.nix
         ./desktop/development.nix
       ];
