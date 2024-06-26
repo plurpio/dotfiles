@@ -8,10 +8,12 @@
   #
 
   users.users.nico = {
-  isNormalUser = true;
-  description = "nico";
-  extraGroups = ["networkmanager" "wheel" "docker" "libvirtd" "flatpak" "disk"
-                 "qemu" "kvm" "sshd" "networkmanager" "audio" "video"];};
+    isNormalUser = true;
+    description = "nico";
+    shell = pkgs.zsh;
+    extraGroups = ["networkmanager" "wheel" "docker" "libvirtd" "flatpak" "disk"
+                  "qemu" "kvm" "sshd" "networkmanager" "audio" "video"];
+  };
 
   nix.settings.trusted-users = [ "root" "@wheel" ];
 
@@ -30,7 +32,6 @@
     home.stateVersion = "23.11";
     programs.home-manager.enable = true;
   };
-
 
   #
   # pkg managers
@@ -90,8 +91,6 @@
     LC_TELEPHONE = "en_AU.UTF-8";
     LC_TIME = "en_AU.UTF-8";
   };
-
-
 
   # OpenGL Settings
   hardware.opengl.enable = true;
