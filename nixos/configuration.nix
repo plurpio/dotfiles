@@ -23,7 +23,7 @@
     # configuration is compatible with. This helps avoid breakage
     # when a new Home Manager release introduces backwards
     # incompatible changes.
-    #
+
     # You can update Home Manager without changing this value. See
     # the Home Manager release notes for a list of state version
     # changes in each release.
@@ -32,38 +32,31 @@
   };
 
   #
-  # package managers
-  #
-
-
-  # Flatpak configuration (with nix-flatpak)
-  services.flatpak = {
-    enable = true;
-    uninstallUnmanagedPackages = false;
-    update.auto.enable = true;
-    update.auto.onCalendar = "weekly";
-
-    remotes = lib.mkOptionDefault [{
-      name = "flathub";
-      location = "https://flathub.org/repo/flathub.flatpakrepo";
-    }];
-  };
-
-  #
   # system settings
   # 
 
 
   # Packages
+  services.flatpak.enable = lib.mkOptionDefault false; # disable by default, desktops enable
   nixpkgs.config.allowUnfree = true;
   nix.settings.trusted-users = [ "root" "@wheel" ];
-  environment.systemPackages = with pkgs; [ zoxide tlrc wget unzip killall jq eza bat git file neovim # needed
-                                            yt-dlp ffmpeg uwufetch fastfetch btop cava ripgrep ];
+  environment.systemPackages = with pkgs; [
+      zoxide tlrc wget unzip killall jq eza bat git file neovim # needed
+  
+      go cargo clang nodejs gnumake python3 python3Packages.virtualenv
+      python3Packages.pip gnupg # dev stuff / neovim depends
+
+      uwufetch fastfetch btop ripgrep # extra
+    ];
 
   # Shell
   programs.zsh.enable = true;
   programs.zsh.autosuggestions.enable = true;
   programs.zsh.syntaxHighlighting.enable = true;
+
+  # GPG
+  programs.gnupg.agent.enable = true;
+  programs.gnupg.agent.pinentryPackage = pkgs.pinentry-curses;
 
   # Documentation
   documentation.man.enable = true;
@@ -86,7 +79,6 @@
   # Locale
   time.timeZone = "Australia/Sydney";
   i18n.defaultLocale = "en_AU.UTF-8";
-
   i18n.extraLocaleSettings = {
     LANGUAGE = "en_AU.UTF-8";
     LC_ALL = "en_AU.UTF-8";
@@ -118,16 +110,10 @@
   nix.gc.dates = "weekly";
   nix.gc.options = "--delete-older-than 3d";
 
-  nix.optimise = {
-    automatic = true;
-    dates = [ "Mon,Fri 20:00" ];
-  };
-
   # Automatic Updates
   system.autoUpgrade = {
       enable = true;
       flake = inputs.self.outPath;
-      flags = [ "--update-input" "nixpkgs" "-L" ];
       dates = "02:00";
       randomizedDelaySec = "45min";
       persistent = true;

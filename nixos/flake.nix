@@ -44,7 +44,6 @@
         home-manager.nixosModules.home-manager
         ./configuration.nix
         ./desktop/desktop.nix
-        ./desktop/development.nix
       ];
     };
   };

@@ -25,7 +25,8 @@
 
   # Core Desktop Applications
   environment.systemPackages = with pkgs; [
-    chromium # not installed with programs.chromium.enable
+    # core desktop
+    chromium
     hyprpaper
     hyprlock
     mako
@@ -40,38 +41,50 @@
     keepassxc
     imagemagick
 
-    # extra
-    gparted
-    efibootmgr
-
-    vlc
+    # media
+    mpv
     obs-studio
     helvum
     spotify
+    yt-dlp
+    ffmpeg
+    cava
 
+    # extra
+    gparted
+    efibootmgr
   ];
 
-  services.flatpak.packages = [ 
-    "com.github.tchx84.Flatseal"
-    "org.filezillaproject.Filezilla"
-    "com.transmissionbt.Transmission"
 
-    "org.mozilla.firefox" 
+  services.flatpak = {
+    enable = true;
+    uninstallUnmanagedPackages = false;
+    update.auto.enable = true;
+    update.auto.onCalendar = "weekly";
+    remotes = lib.mkOptionDefault [{ name = "flathub"; location = "https://flathub.org/repo/flathub.flatpakrepo"; }];
 
-    "org.kde.kdenlive"
-    "org.kde.krita"
-    "org.audacityteam.Audacity"
-    "org.upscayl.Upscayl"
-    "org.gimp.GIMP"
+    packages = [ 
+      "com.github.tchx84.Flatseal"
+      "org.filezillaproject.Filezilla"
+      "com.transmissionbt.Transmission"
 
-    "md.obsidian.Obsidian"
+      "org.mozilla.firefox" 
 
-    "com.valvesoftware.Steam"
-    "net.davidotek.pupgui2"
-    "org.prismlauncher.PrismLauncher"
-    "com.heroicgameslauncher.hgl"
-    "io.itch.itch"
-  ];
+      "org.kde.kdenlive"
+      "org.kde.krita"
+      "org.audacityteam.Audacity"
+      "org.upscayl.Upscayl"
+      "org.gimp.GIMP"
+
+      "md.obsidian.Obsidian"
+
+      "com.valvesoftware.Steam"
+      "net.davidotek.pupgui2"
+      "org.prismlauncher.PrismLauncher"
+      "com.heroicgameslauncher.hgl"
+      "io.itch.itch"
+    ];
+  };
 
   # Enable login manager
   services.greetd.enable = true;
@@ -206,18 +219,6 @@
     libvirtd.qemu.ovmf.packages = [ pkgs.OVMFFull.fd ];
     libvirtd.qemu.swtpm.enable = true;
   };
-
-  #
-  # Enable weylus ( use ipad as drawing tablet )
-  #
-
-  programs.weylus = {
-    enable = true;
-    users = [ "nico" ];
-    openFirewall = true;
-  };
-
-  users.users.nico.extraGroups = [ "uinput" ];
 
   #
   # Enable pipewire/audio
