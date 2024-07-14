@@ -94,8 +94,16 @@
   };
 
   # OpenGL Settings
-  hardware.opengl.enable = true;
-  hardware.opengl.extraPackages = with pkgs; [ intel-media-driver ];
+  hardware.graphics.enable = true;
+  hardware.graphics.extraPackages = with pkgs; [ intel-media-driver ];
+
+  # Enable audio
+  services.pipewire.enable = true;
+  services.pipewire.alsa.enable = true;
+  services.pipewire.alsa.support32Bit = true;
+  services.pipewire.pulse.enable = true;
+  services.pipewire.wireplumber.enable = true;
+
 
   # SSH
   services.openssh.enable = true;

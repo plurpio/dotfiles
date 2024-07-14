@@ -7,11 +7,9 @@
 
   nixConfig = {
     substituters = [
-      "https://hyprland.cachix.org"
       "https://cache.nixos.org"
     ];
     trusted-public-keys = [
-      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
     ];
   };
@@ -24,7 +22,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.3.0";
-    hyprland.url = "github:hyprwm/Hyprland";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -43,7 +40,7 @@
         nix-flatpak.nixosModules.nix-flatpak
         home-manager.nixosModules.home-manager
         ./configuration.nix
-        ./desktop/desktop.nix
+        ./desktop.nix
       ];
     };
   };

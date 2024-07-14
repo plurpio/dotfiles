@@ -3,7 +3,7 @@
 #
 
 zstyle ':completion:*' menu select
-eval "$(${pkgs.zoxide}/bin/zoxide init zsh)"
+eval "$(zoxide init zsh)"
 bindkey -e
 
 # Prompt
