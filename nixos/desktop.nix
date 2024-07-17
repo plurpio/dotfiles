@@ -45,11 +45,11 @@
     mpv
     obs-studio
     helvum
-    spotify
     yt-dlp
     ffmpeg
     cava
     ani-cli
+    spicetify-cli
 
     # social
     vesktop
@@ -80,6 +80,7 @@
       "org.audacityteam.Audacity"
       "org.upscayl.Upscayl"
       "org.gimp.GIMP"
+      "com.spotify.Client"
 
       "md.obsidian.Obsidian"
 
@@ -265,6 +266,7 @@
   programs.virt-manager.enable = true;
 
   virtualisation = {
+    docker.enable = true;
     spiceUSBRedirection.enable = true;
     libvirtd.enable = true;
     libvirtd.qemu.ovmf.packages = [ pkgs.OVMFFull.fd ];

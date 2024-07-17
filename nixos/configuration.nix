@@ -12,7 +12,7 @@
     description = "nico";
     shell = pkgs.zsh;
     extraGroups = ["networkmanager" "wheel" "docker" "libvirtd" "flatpak" "disk"
-                  "qemu" "kvm" "sshd" "networkmanager" "audio" "video"];
+                  "qemu" "kvm" "sshd" "networkmanager" "audio" "video" "docker"];
   };
 
   home-manager.users.nico = {
@@ -41,7 +41,7 @@
   nixpkgs.config.allowUnfree = true;
   nix.settings.trusted-users = [ "root" "@wheel" ];
   environment.systemPackages = with pkgs; [
-      zoxide tlrc wget unzip killall jq eza bat git file neovim # needed
+      zoxide tlrc wget unzip killall jq eza bat git file neovim tmux # needed
   
       go cargo clang nodejs gnumake python3 python3Packages.virtualenv
       python3Packages.pip gnupg # dev stuff / neovim depends
@@ -68,6 +68,10 @@
   # Networking
   networking.hostName = "penguin";
   networking.networkmanager.enable = true;
+
+  # Printing
+  services.printing.enable = true;
+  services.ipp-usb.enable = true;
 
   # Drives
   services.udisks2.enable = true;

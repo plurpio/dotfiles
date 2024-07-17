@@ -3,18 +3,32 @@
 #
 
 zstyle ':completion:*' menu select
+setopt HIST_IGNORE_SPACE
 eval "$(zoxide init zsh)"
 bindkey -e
 
+# Set history
+HISTFILE="$HOME/.cache/history"
+HISTSIZE=1000000
+SAVEHIST=1000000
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
 # Prompt
-PROMPT="%F{cyan}%f%k%K{cyan}%F{black} %f%k%F{cyan}%f "
-RPROMPT='%F{white}%f%k%K{white}%F{black}  %~%f%k%F{white}%f %F{blue}%f%K{blue}%F{black}%n%f%k%K{blue}%F{black}@%f%k%K{blue}%F{black}%m%f%k%F{blue}%f'
+PROMPT='%F{blue}%~ %b%F{yellow}${vcs_info_msg_0_}%F{red}➜ %f'
+
+# git info in rprompt
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+zstyle ':vcs_info:git:*' formats '%b '
 
 # Alias
 alias ls="eza -Ah --color=auto --icons"
 alias ll="eza -lAh --color=auto --icons"
-alias l1="eza -lAh --color=auto --level 1 --icons"
-alias l2="eza -lAh --color=auto --level 2 --icons"
 alias cat="bat"
 alias ".."="cd .."
 alias "cd.."="cd .."
@@ -38,7 +52,7 @@ alias gph="git push"
 alias gpl="git pull"
 alias py="python3"
 alias pyve="source venv/bin/activate"
-alias pyvec="python3 -m venv venv source venv/bin/activate";
+alias pyvec="python3 -m venv venv; source venv/bin/activate";
 
 alias viu="kitty +icat"
 alias run="nix run"
