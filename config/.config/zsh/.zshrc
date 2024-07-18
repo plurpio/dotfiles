@@ -32,9 +32,14 @@ alias ll="eza -lAh --color=auto --icons"
 alias cat="bat"
 alias ".."="cd .."
 alias "cd.."="cd .."
-alias rm="rm -rf"
+alias rm="trash-put"
 alias cls="clear"
 alias quit="exit"
+
+alias rm="trash-put"
+alias rmls="trash-list"
+alias rmr="trash-restore"
+alias rmempty="trash-empty"
 
 alias vim="nvim"
 alias vi="nvim"
@@ -51,10 +56,11 @@ alias gs="git status"
 alias gph="git push"
 alias gpl="git pull"
 alias py="python3"
-alias pyve="source venv/bin/activate"
-alias pyvec="python3 -m venv venv; source venv/bin/activate";
+alias pyve="source venv/bin/activate" alias pyvec="python3 -m venv venv; source venv/bin/activate";
 
 alias viu="kitty +icat"
 alias run="nix run"
-alias rebuild="doas nixos-rebuild switch --flake /home/nico/repos/dotfiles/nixos --impure"
 alias sudo="echo \"use doas dummy :3\"; doas"
+
+alias rebuild="doas nixos-rebuild switch --flake /home/nico/repos/dotfiles/nixos --impure"
+alias stowa="stow -v -R -t ~ -d $HOME/repos/dotfiles config"

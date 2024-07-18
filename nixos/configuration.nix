@@ -41,7 +41,7 @@
   nixpkgs.config.allowUnfree = true;
   nix.settings.trusted-users = [ "root" "@wheel" ];
   environment.systemPackages = with pkgs; [
-      zoxide tlrc wget unzip killall jq eza bat git file neovim tmux # needed
+      zoxide tlrc wget unzip killall jq eza bat git file neovim tmux trash-cli stow # needed
   
       go cargo clang nodejs gnumake python3 python3Packages.virtualenv
       python3Packages.pip gnupg # dev stuff / neovim depends
