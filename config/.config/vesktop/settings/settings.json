@@ -4,8 +4,7 @@
     "autoUpdateNotification": true,
     "useQuickCss": true,
     "themeLinks": [
-        "https://capnkitten.github.io/BetterDiscord/Themes/Material-Discord/css/source.css",
-        "https://raw.githubusercontent.com/DiscordStyles/RadialStatus/deploy/RadialStatus.theme.css"
+        "https://capnkitten.github.io/BetterDiscord/Themes/Material-Discord/css/source.css"
     ],
     "enabledThemes": [],
     "enableReactDevtools": false,
@@ -187,8 +186,8 @@
         },
         "ImageZoom": {
             "enabled": true,
-            "size": 100,
-            "zoom": 2.499999940395358,
+            "size": 501.8762560954529,
+            "zoom": 3.4999999006589304,
             "nearestNeighbour": false,
             "square": false,
             "saveZoomValues": true,
@@ -426,7 +425,8 @@
         "ShowHiddenChannels": {
             "enabled": true,
             "showMode": 0,
-            "hideUnreads": true
+            "hideUnreads": true,
+            "defaultAllowedUsersAndRolesDropdownState": true
         },
         "ShowMeYourName": {
             "enabled": false
@@ -620,7 +620,7 @@
             "enabled": false
         },
         "FixYoutubeEmbeds": {
-            "enabled": false
+            "enabled": true
         },
         "FriendsSince": {
             "enabled": true
@@ -692,7 +692,7 @@
             "enabled": false
         },
         "NoDefaultHangStatus": {
-            "enabled": false
+            "enabled": true
         },
         "NoOnboardingDelay": {
             "enabled": true
@@ -747,6 +747,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1721217946170
+        "settingsSyncVersion": 1721540398772
     }
 }
