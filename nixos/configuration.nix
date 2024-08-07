@@ -110,13 +110,16 @@
       "com.transmissionbt.Transmission"
 
       "org.kde.kdenlive"
-      "org.kde.krita"
       "org.audacityteam.Audacity"
       "org.upscayl.Upscayl"
+      "org.kde.krita"
       "org.gimp.GIMP"
+      "com.orama_interactive.Pixelorama"
+
       "com.spotify.Client"
 
       "md.obsidian.Obsidian"
+      "com.jeffser.Alpaca"
 
       "com.valvesoftware.Steam"
       "net.davidotek.pupgui2"
@@ -144,6 +147,7 @@
   # Virtualisation
   programs.virt-manager.enable = true;
   virtualisation = {
+    waydroid.enable = true;
     docker.enable = true;
     spiceUSBRedirection.enable = true;
     libvirtd.enable = true;
@@ -165,7 +169,7 @@
     "AutofillCreditCardEnabled" = false;
     "DisableFormHistory" = true;
     "HttpsOnlyMode" = "enabled";
-    "SearchSuggestEnabled" = true;
+    "SearchSuggestEnabled" = false;
 
     "DefaultDownloadDirectory" = "\${home}/dl";
 
@@ -248,10 +252,6 @@
       "sponsorBlocker@ajay.app" = {
         "installation_mode" = "normal_installed";
         "install_url" = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
-      };
-      "{762f9885-5a13-4abd-9c77-433dcd38b8fd}" = {
-        "installation_mode" = "normal_installed";
-        "install_url" = "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi";
       };
       "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = {
         "installation_mode" = "normal_installed";
@@ -348,7 +348,6 @@
   services.pipewire.alsa.support32Bit = true;
   services.pipewire.pulse.enable = true;
   services.pipewire.wireplumber.enable = true;
-
 
   # SSH
   services.openssh.enable = true;

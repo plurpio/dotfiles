@@ -63,4 +63,4 @@ alias run="nix run"
 alias sudo="echo \"use doas dummy :3\"; doas"
 
 alias rebuild="doas nixos-rebuild switch --flake /home/nico/repos/dotfiles/nixos --impure"
-alias stowa="stow -v -R -t ~ -d $HOME/repos/dotfiles config"
+alias stowa="stow -R -t ~ -d $HOME/repos/dotfiles config"

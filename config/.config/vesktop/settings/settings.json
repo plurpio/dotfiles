@@ -68,7 +68,7 @@
             "file": true
         },
         "AnonymiseFileNames": {
-            "enabled": true,
+            "enabled": false,
             "method": 0,
             "randomisedLength": 7,
             "anonymiseByDefault": true
@@ -187,7 +187,7 @@
         "ImageZoom": {
             "enabled": true,
             "size": 501.8762560954529,
-            "zoom": 3.4999999006589304,
+            "zoom": 3.043564453190907,
             "nearestNeighbour": false,
             "square": false,
             "saveZoomValues": true,
@@ -214,7 +214,8 @@
         "MessageLinkEmbeds": {
             "enabled": true,
             "listMode": "blacklist",
-            "idList": ""
+            "idList": "",
+            "automodEmbeds": "never"
         },
         "MessageLogger": {
             "enabled": true,
@@ -475,8 +476,10 @@
             "receivedInput": "auto",
             "receivedOutput": "en",
             "sentInput": "auto",
-            "sentOutput": "ru",
-            "showAutoTranslateAlert": false
+            "sentOutput": "ar",
+            "showAutoTranslateAlert": false,
+            "service": "google",
+            "showAutoTranslateTooltip": true
         },
         "TypingIndicator": {
             "enabled": false
@@ -727,14 +730,14 @@
         "VoiceDownload": {
             "enabled": false
         },
-        "WatchTogetherAdblock": {
-            "enabled": true
-        },
         "WebScreenShareFixes": {
             "enabled": true
         },
         "MentionAvatars": {
             "enabled": false
+        },
+        "YoutubeAdblock": {
+            "enabled": true
         }
     },
     "notifications": {
@@ -747,6 +750,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1721540398772
+        "settingsSyncVersion": 1723032480011
     }
 }
