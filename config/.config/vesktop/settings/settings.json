@@ -149,7 +149,8 @@
             "emojiSize": 48,
             "hyperLinkText": "{{NAME}}",
             "useHyperLinks": true,
-            "disableEmbedPermissionCheck": false
+            "disableEmbedPermissionCheck": false,
+            "stickerSize": 160
         },
         "FakeProfileThemes": {
             "enabled": false
@@ -328,7 +329,8 @@
             "spotify": true,
             "steam": true,
             "epic": true,
-            "tidal": true
+            "tidal": true,
+            "itunes": true
         },
         "PermissionsViewer": {
             "enabled": true,
@@ -438,7 +440,8 @@
         "SilentTyping": {
             "enabled": true,
             "showIcon": false,
-            "isEnabled": true
+            "isEnabled": true,
+            "contextMenu": true
         },
         "SortFriendRequests": {
             "enabled": true,
@@ -524,7 +527,7 @@
             "unmuteMessage": "{{USER}} unmuted",
             "deafenMessage": "{{USER}} deafened",
             "undeafenMessage": "{{USER}} undeafened",
-            "voice": "English (Lancaster)+David espeak-ng"
+            "voice": "Afrikaans espeak-ng"
         },
         "VencordToolbox": {
             "enabled": false
@@ -713,7 +716,8 @@
             "enabled": false
         },
         "Summaries": {
-            "enabled": false
+            "enabled": true,
+            "summaryExpiryThresholdDays": 3
         },
         "ShowAllRoles": {
             "enabled": false
@@ -750,6 +754,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1723032480011
+        "settingsSyncVersion": 1723809413523
     }
 }

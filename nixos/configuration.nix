@@ -11,6 +11,10 @@
   # Core desktop programs
   programs.hyprland.enable = true;
   programs.waybar.enable = true;
+  
+  # Cosmic
+  services.desktopManager.cosmic.enable = true;
+  services.power-profiles-daemon.enable = false;
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
@@ -50,11 +54,6 @@
     ani-cli
     spicetify-cli
 
-    # theming
-    pkgs.bibata-cursors
-    pkgs.tokyo-night-gtk
-    pkgs.papirus-icon-theme
-
     # social
     vesktop
 
@@ -92,6 +91,8 @@
     efibootmgr
     uwufetch
     fastfetch
+    scrcpy
+    cage
   ];
 
   services.flatpak = {
@@ -119,9 +120,13 @@
       "com.spotify.Client"
 
       "md.obsidian.Obsidian"
+      "io.gitlab.news_flash.NewsFlash"
       "com.jeffser.Alpaca"
 
+      "org.mozilla.Thunderbird"
+
       "com.valvesoftware.Steam"
+      "io.github.everestapi.Olympus"
       "net.davidotek.pupgui2"
       "org.prismlauncher.PrismLauncher"
       "com.heroicgameslauncher.hgl"
@@ -143,6 +148,9 @@
       user = "greeter";
     };
   };
+
+  # Android Debug Bridge
+  programs.adb.enable = true;
 
   # Virtualisation
   programs.virt-manager.enable = true;

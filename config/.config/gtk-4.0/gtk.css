@@ -1,5 +1,0 @@
-/**
- * GTK 4 reads the theme configured by gtk-theme-name, but ignores it.
- * It does however respect user CSS, so import the theme from here.
-**/
-/*@import url("file:///nix/store/fg2zjdhx65c9f0j060gi4r88p4rhpyhp-tokyonight-gtk-theme-0-unstable-2024-06-27/share/themes/Tokyonight-Dark/gtk-4.0/gtk.css");*/
