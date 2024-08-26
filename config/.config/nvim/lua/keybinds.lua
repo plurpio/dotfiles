@@ -17,8 +17,8 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Navigation
-vim.cmd "map et :lua require('harpoon.mark').add_file() <Enter>" -- Add file to harpoon
-vim.cmd "map er :lua require('harpoon.mark').rm_file() <Enter>" -- Add remove to harpoon
+vim.cmd "map <leader>t :lua require('harpoon.mark').add_file() <Enter>" -- Add file to harpoon
+vim.cmd "map <leader>r :lua require('harpoon.mark').rm_file() <Enter>" -- Add remove to harpoon
 vim.keymap.set("n", "<leader>x", "<cmd>Dashboard <CR>") -- Access dashboard
 vim.keymap.set("n", "<leader>e", "<cmd>Telescope harpoon marks <CR>") -- Opens marked files changer thing
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
@@ -36,3 +36,6 @@ vim.keymap.set("n", "<up>", "")
 vim.keymap.set("n", "<down>", "")
 vim.keymap.set("n", "<right>", "")
 vim.keymap.set("n", "<left>", "")
+
+-- Tabularize.vim
+vim.keymap.set("v", "<leader>a", "<cmd>Tabularize trailing_c_comments<CR>")

@@ -10,12 +10,9 @@
 
   # Core desktop programs
   programs.hyprland.enable = true;
+  programs.hyprland.package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
   programs.waybar.enable = true;
   
-  # Cosmic
-  services.desktopManager.cosmic.enable = true;
-  services.power-profiles-daemon.enable = false;
-
   xdg.portal.enable = true;
   xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
   security.polkit.enable = true;
@@ -74,6 +71,7 @@
     stow
     btop
     ripgrep
+    distrobox
 
     # dev
     go
@@ -299,8 +297,6 @@
 
   # Shell
   programs.zsh.enable = true;
-  programs.zsh.autosuggestions.enable = true;
-  programs.zsh.syntaxHighlighting.enable = true;
 
   # GPG
   programs.gnupg.agent.enable = true;
@@ -345,6 +341,9 @@
     LC_TELEPHONE = "en_AU.UTF-8";
     LC_TIME = "en_AU.UTF-8";
   };
+
+  # Enable dynamically linked executables
+  programs.nix-ld.enable = true;
 
   # OpenGL Settings
   hardware.graphics.enable = true;

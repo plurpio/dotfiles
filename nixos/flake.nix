@@ -7,13 +7,13 @@
 
   nixConfig = {
     substituters = [
-      "https://cosmic.cachix.org/"
       "https://cache.nixos.org"
+      "https://hyprland.cachix.org"
     ];
 
     trusted-public-keys = [
-      "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
     ];
   };
 
@@ -21,22 +21,17 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.3.0";
-
-    nixos-cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
   };
 
-  outputs = { self, nixpkgs, nix-flatpak, nixos-cosmic, ... }@inputs: {
+  outputs = { self, nixpkgs, nix-flatpak, ... }@inputs: {
     system = "x86_64-linux";
 
     nixosConfigurations.penguin = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         nix-flatpak.nixosModules.nix-flatpak
-        nixos-cosmic.nixosModules.default
         ./configuration.nix
       ];
     };

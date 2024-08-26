@@ -5,8 +5,9 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: ComicShannsMono Nerd Font, Noto Serif Japanese, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    border-radius: 6px;
+    font-size: 11px;
+/*    font-size: 13px;*/
+/*    border-radius: 6px;*/
 }
 
 window#waybar {

@@ -16,6 +16,9 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+# Bind ctrl+f to zi
+bindkey -s '^F' 'zi\r'
+
 # Prompt
 PROMPT='%F{blue}%~ %b%F{yellow}${vcs_info_msg_0_}%F{red}➜ %f'
 
@@ -54,7 +57,7 @@ alias ga="git add"
 alias gc="git commit"
 alias gs="git status"
 alias gph="git push"
-alias gpl="git pull"
+alias gpl="git pull --rebase"
 alias py="python3"
 alias pyve="source venv/bin/activate" alias pyvec="python3 -m venv venv; source venv/bin/activate";
 
@@ -64,3 +67,23 @@ alias sudo="echo \"use doas dummy :3\"; doas"
 
 alias rebuild="doas nixos-rebuild switch --flake /home/nico/repos/dotfiles/nixos --impure"
 alias stowa="stow -R -t ~ -d $HOME/repos/dotfiles config"
+
+alias botp="btop" # done this wayy too many times
+
+# Auto install plugins
+export ZSH_PLUGIN_DIR=$XDG_CACHE_HOME/purp/zsh
+if [ ! -d "$ZSH_PLUGIN_DIR" ]; then
+  if ! command -v git > /dev/null; then
+    echo "git is not installed. please install it to enable plugins."
+  else
+    mkdir -p "$ZSH_PLUGIN_DIR"
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting "$ZSH_PLUGIN_DIR/zsh-syntax-highlighting"
+    git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_PLUGIN_DIR/zsh-autosuggestions"
+  fi
+fi
+
+if [ -d "$ZSH_PLUGIN_DIR" ]; then
+  source "$ZSH_PLUGIN_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  source "$ZSH_PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
+  

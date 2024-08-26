@@ -95,6 +95,8 @@ require("lazy").setup({
 
   { "lewis6991/gitsigns.nvim", },
 
+  { "godlygeek/tabular", },
+
   {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v3.x'

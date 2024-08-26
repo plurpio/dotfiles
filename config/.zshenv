@@ -10,13 +10,15 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
-export PATH="$HOME/.local/bin:$PATH"
+
 export EDITOR="nvim"
 export TERMINAL="kitty"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/pythonrc"
 export GOPATH="$XDG_DATA_HOME/go"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
+
+export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH"
 
 HISTFILE="$HOME/.cache/history"
 HISTSIZE=1000000

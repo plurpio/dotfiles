@@ -1,6 +1,7 @@
 -------------
 -- General --
 -------------
+
 require("plugins")
 
 require("plugconf.general")
