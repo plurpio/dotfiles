@@ -34,12 +34,7 @@ cp ~/.cache/wal/colors-tofi ~/.config/tofi/colors-tofi
 killall .waybar-wrapped
 nohup waybar > /dev/null &
 
-hyprctl hyprpaper unload ~/.cache/wallpaper
-sleep 0.1 # Hyprpaper gets stuck on this
-hyprctl hyprpaper preload ~/.cache/wallpaper
-sleep 0.1 # Hyprpaper gets stuck on this
-hyprctl hyprpaper wallpaper HDMI-A-1,~/.cache/wallpaper
-hyprctl hyprpaper wallpaper eDP-1,~/.cache/wallpaper
+swww img ~/.cache/wallpaper -t grow
 
 cp $HOME/.config/mako/config.default $HOME/.config/mako/config
 . "${HOME}/.cache/wal/colors.sh"

@@ -719,9 +719,6 @@
             "enabled": true,
             "summaryExpiryThresholdDays": 3
         },
-        "ShowAllRoles": {
-            "enabled": false
-        },
         "ShowTimeoutDuration": {
             "enabled": false
         },
@@ -742,6 +739,12 @@
         },
         "YoutubeAdblock": {
             "enabled": true
+        },
+        "NoMaskedUrlPaste": {
+            "enabled": false
+        },
+        "AlwaysExpandRoles": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -754,6 +757,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1724409687923
+        "settingsSyncVersion": 1724927935915
     }
 }

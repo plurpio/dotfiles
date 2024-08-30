@@ -26,7 +26,7 @@
   environment.systemPackages = with pkgs; [
     # core desktop
     chromium
-    hyprpaper
+    swww
     hyprlock
     kitty
     mako
@@ -91,6 +91,7 @@
     fastfetch
     scrcpy
     cage
+    r2modman
   ];
 
   services.flatpak = {
