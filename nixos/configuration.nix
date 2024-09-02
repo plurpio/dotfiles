@@ -119,6 +119,7 @@
       "com.spotify.Client"
 
       "md.obsidian.Obsidian"
+      "net.ankiweb.Anki"
       "io.gitlab.news_flash.NewsFlash"
       "com.jeffser.Alpaca"
 

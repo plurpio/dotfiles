@@ -66,7 +66,7 @@ alias run="nix run"
 alias sudo="echo \"use doas dummy :3\"; doas"
 
 alias rebuild="doas nixos-rebuild switch --flake /home/nico/repos/dotfiles/nixos --impure"
-alias stowa="stow -R -t ~ -d $HOME/repos/dotfiles config"
+alias stowa="stow -R -t ~ -d $HOME/repos/dotfiles config --no-folding"
 
 alias botp="btop" # done this wayy too many times
 
@@ -87,3 +87,7 @@ else
   source "$ZSH_PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
   
+# SSHed conditions
+if [[ -v SSH_TTY ]]; then
+  fastfetch
+fi
