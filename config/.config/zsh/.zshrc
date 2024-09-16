@@ -58,6 +58,7 @@ alias gc="git commit"
 alias gs="git status"
 alias gph="git push"
 alias gpl="git pull --rebase"
+alias gl="git log"
 alias py="python3"
 alias pyve="source venv/bin/activate" alias pyvec="python3 -m venv venv; source venv/bin/activate";
 

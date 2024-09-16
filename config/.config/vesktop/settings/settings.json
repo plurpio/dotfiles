@@ -129,7 +129,8 @@
         "Dearrow": {
             "enabled": true,
             "hideButton": false,
-            "replaceElements": 0
+            "replaceElements": 0,
+            "dearrowByDefault": true
         },
         "EmoteCloner": {
             "enabled": true
@@ -472,7 +473,9 @@
             "enabled": false
         },
         "TimeBarAllActivities": {
-            "enabled": true
+            "enabled": true,
+            "hideActivityDetailText": true,
+            "hideActivityTimerBadges": true
         },
         "Translate": {
             "enabled": true,
@@ -517,7 +520,7 @@
             "enabled": false
         },
         "VcNarrator": {
-            "enabled": true,
+            "enabled": false,
             "volume": 1,
             "rate": 1,
             "sayOwnName": false,
@@ -719,7 +722,7 @@
         },
         "Summaries": {
             "enabled": true,
-            "summaryExpiryThresholdDays": 3
+            "summaryExpiryThresholdDays": 30
         },
         "ShowTimeoutDuration": {
             "enabled": false
@@ -747,6 +750,15 @@
         },
         "AlwaysExpandRoles": {
             "enabled": false
+        },
+        "CopyFileContents": {
+            "enabled": false
+        },
+        "StickerPaste": {
+            "enabled": false
+        },
+        "VolumeBooster": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -759,6 +771,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1725108739740
+        "settingsSyncVersion": 1726061982816
     }
 }

@@ -44,7 +44,7 @@
     # media
     mpv
     obs-studio
-    helvum
+    qpwgraph
     yt-dlp
     ffmpeg
     cava
@@ -96,7 +96,7 @@
 
   services.flatpak = {
     enable = true;
-    uninstallUnmanagedPackages = true;
+    uninstallUnmanagedPackages = false;
     update.auto.enable = true;
     update.auto.onCalendar = "daily";
     remotes = lib.mkOptionDefault [
@@ -117,11 +117,13 @@
       "com.orama_interactive.Pixelorama"
 
       "com.spotify.Client"
+      "com.github.wwmm.easyeffects"
 
       "md.obsidian.Obsidian"
       "net.ankiweb.Anki"
       "io.gitlab.news_flash.NewsFlash"
       "com.jeffser.Alpaca"
+      "org.localsend.localsend_app"
 
       "org.mozilla.Thunderbird"
 
@@ -161,6 +163,7 @@
     libvirtd.enable = true;
     libvirtd.qemu.ovmf.packages = [ pkgs.OVMFFull.fd ];
     libvirtd.qemu.swtpm.enable = true;
+    vmware.host.enable = true;
   };
 
   #
@@ -389,7 +392,10 @@
 
   # Replace sudo with doas
   security.doas.enable = true;
-  security.doas.extraConfig = "permit keepenv persist :wheel";
+  security.doas.extraConfig = ''
+    permit keepenv persist :wheel
+    permit nopass :wheel as root cmd /run/current-system/sw/bin/kubectl
+ ''; 
   security.sudo.enable = false;
 
   # Enable nix-command and flakes
