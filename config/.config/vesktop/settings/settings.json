@@ -5,8 +5,8 @@
     "useQuickCss": true,
     "themeLinks": [
         "#https://capnkitten.github.io/BetterDiscord/Themes/Material-Discord/css/source.css",
-        "#https://raw.githubusercontent.com/Dyzean/Tokyo-Night/main/themes/tokyo-night.theme.css",
-        "https://refact0r.github.io/midnight-discord/midnight.css"
+        "https://raw.githubusercontent.com/Dyzean/Tokyo-Night/main/themes/tokyo-night.theme.css",
+        "#https://refact0r.github.io/midnight-discord/midnight.css"
     ],
     "enabledThemes": [],
     "enableReactDevtools": false,
@@ -62,7 +62,7 @@
             "enabled": true
         },
         "AlwaysAnimate": {
-            "enabled": true
+            "enabled": false
         },
         "AlwaysTrust": {
             "enabled": true,
@@ -121,7 +121,7 @@
             "enabled": true
         },
         "CrashHandler": {
-            "enabled": true
+            "enabled": false
         },
         "CustomRPC": {
             "enabled": false
@@ -190,8 +190,8 @@
         },
         "ImageZoom": {
             "enabled": true,
-            "size": 501.8762560954529,
-            "zoom": 3.043564453190907,
+            "size": 1000,
+            "zoom": 3.0833332505491082,
             "nearestNeighbour": false,
             "square": false,
             "saveZoomValues": true,
@@ -286,7 +286,10 @@
         "Moyai": {
             "enabled": true,
             "ignoreBots": true,
-            "ignoreBlocked": true
+            "ignoreBlocked": true,
+            "triggerWhenUnfocused": true,
+            "quality": "Normal",
+            "volume": 0.5
         },
         "MutualGroupDMs": {
             "enabled": true
@@ -381,7 +384,7 @@
             "enabled": false
         },
         "RelationshipNotifier": {
-            "enabled": true,
+            "enabled": false,
             "offlineRemovals": true,
             "groups": true,
             "servers": true,
@@ -406,9 +409,6 @@
             "isEnabled": true
         },
         "RoleColorEverywhere": {
-            "enabled": false
-        },
-        "SearchReply": {
             "enabled": false
         },
         "SecretRingToneEnabler": {
@@ -508,7 +508,10 @@
             "enabled": false
         },
         "UserVoiceShow": {
-            "enabled": true
+            "enabled": true,
+            "showInUserProfileModal": true,
+            "showInMemberList": true,
+            "showInMessages": true
         },
         "USRBG": {
             "enabled": false
@@ -607,7 +610,7 @@
             "enabled": false
         },
         "DisableCallIdle": {
-            "enabled": true
+            "enabled": false
         },
         "NewGuildSettings": {
             "enabled": false
@@ -622,7 +625,7 @@
             "enabled": false
         },
         "BetterSettings": {
-            "enabled": true,
+            "enabled": false,
             "disableFade": true,
             "organizeMenu": true,
             "eagerLoad": true
@@ -759,6 +762,12 @@
         },
         "VolumeBooster": {
             "enabled": false
+        },
+        "AccountPanelServerProfile": {
+            "enabled": false
+        },
+        "FullSearchContext": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -771,6 +780,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1726061982816
+        "settingsSyncVersion": 1727335409991
     }
 }

@@ -92,6 +92,7 @@
     scrcpy
     cage
     r2modman
+    openvpn
   ];
 
   services.flatpak = {
@@ -163,7 +164,6 @@
     libvirtd.enable = true;
     libvirtd.qemu.ovmf.packages = [ pkgs.OVMFFull.fd ];
     libvirtd.qemu.swtpm.enable = true;
-    vmware.host.enable = true;
   };
 
   #
